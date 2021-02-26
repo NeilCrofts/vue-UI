@@ -20,5 +20,7 @@
     "url": "https://github.com/NeilCrofts/vue-UI/issues"
   },
   "homepage": "https://github.com/NeilCrofts/vue-UI#readme",
-  "dependencies": {}
+  "dependencies": {
+    "vue": "^2.6.12"
+  }
 }
