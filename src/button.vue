@@ -1,6 +1,7 @@
 <template>
-   <button class='g-button' :class="{[`icon-${iconPossition}`]:true}">
-        <g-icon v-if='icon' :name='icon' class="icon"></g-icon>
+   <button class='g-button' :class="{[`icon-${iconPossition}`]:true}" @click="$emit('click')">
+        <g-icon v-if='icon && !isLoading' :name='icon' class="icon"></g-icon>
+        <g-icon v-if='isLoading' name='loading' class="loading icon"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -17,11 +18,19 @@ export default {
             //    return !(value!=='left'&& value!=='right')
                return value==='left'|| value==='right'
                 }
+            },
+            'isLoading':{
+                type:Boolean,
+                default:false
             }
         }
 }
 </script>
 <style lang="scss">
+    @keyframes spin {
+        0%{transform: rotate(0deg);}
+        100%{transform: rotate(360deg);}
+    }
     .g-button {
         display: inline-flex;justify-content: center;align-items: center;  //用flex布局来设置图标在按钮的左右位置
         font-size: var(--font-size);
@@ -40,6 +49,9 @@ export default {
         &.icon-right{
             >.icon{order:2;margin-left: .3em;margin-right: 0;}
             >.content{order: 1}
+        }
+        >.loading{
+            animation: spin 2s infinite linear;
         }
     }
 </style>

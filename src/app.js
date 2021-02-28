@@ -5,6 +5,10 @@ Vue.component('g-button', Button)
 Vue.component('g-icon', icon)
 var vm = new Vue({
     el: '#app',
-    data: {},
+    data: {
+        isLoading1: true,
+        isLoading2: false,
+        isLoading3: false,
+    },
     methods: {}
 });
