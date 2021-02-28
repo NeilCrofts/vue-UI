@@ -22,6 +22,7 @@
             --color: #333;
             --border-color: #999;
             --border-color-hover: #666;
+            /* --border-color-hover: red; */
         }
         
         #app {
@@ -42,16 +43,25 @@
         <g-button icon='' :is-loading='isLoading1' @click='isLoading1=!isLoading1'>
             按钮
         </g-button>
-        <g-button icon='setting' icon-possition='left' :is-loading='isLoading2' @click='isLoading2=!isLoading2'>
+        <g-button icon='setting' icon-position='left' :is-loading='isLoading2' @click='isLoading2=!isLoading2'>
             按钮
         </g-button>
-        <g-button icon='setting' icon-possition='right' :is-loading='isLoading3' @click='isLoading3=!isLoading3'>
+        <g-button icon='setting' icon-position='right' :is-loading='isLoading3' @click='isLoading3=!isLoading3'>
             按钮
         </g-button>
-        <g-button icon='' :is-loading='true' icon-possition='right'>
+        <g-button icon='' :is-loading='true' icon-position='right'>
             按钮
         </g-button>
         <g-icon name='download'></g-icon>
+        <g-button-group>
+            <g-button icon='left'>
+                上一页
+            </g-button>
+            <g-button>更多</g-button>
+            <g-button icon='right' icon-position='right'>
+                下一页
+            </g-button>
+        </g-button-group>
     </div>
     <script src="src/app.js"></script>
     <script src="//at.alicdn.com/t/font_2390654_3jlpxsgs37e.js"></script>

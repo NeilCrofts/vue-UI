@@ -1,5 +1,5 @@
 <template>
-   <button class='g-button' :class="{[`icon-${iconPossition}`]:true}" @click="$emit('click')">
+   <button class='g-button' :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
         <g-icon v-if='icon && !isLoading' :name='icon' class="icon"></g-icon>
         <g-icon v-if='isLoading' name='loading' class="loading icon"></g-icon>
         <div class="content">
@@ -11,7 +11,7 @@
 export default {
     props:{
         'icon':{},
-        'iconPossition':{
+        'iconPosition':{
             type:String,
             default:'left',
             validator(value){
