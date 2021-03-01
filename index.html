@@ -40,6 +40,12 @@
 
 <body>
     <div id="app">
+        <div>
+            <g-input value='张三'></g-input>
+            <g-input value='李四' disabled></g-input>
+            <g-input value='王五' readonly></g-input>
+            <g-input value='王' error='姓名不能少于两个字'></g-input>
+        </div>
         <g-button icon='' :is-loading='isLoading1' @click='isLoading1=!isLoading1'>
             按钮
         </g-button>
@@ -64,7 +70,7 @@
         </g-button-group>
         <!-- 测试组件 -->
     </div>
-    <div id="test"></div>
+
     <script src="src/app.js"></script>
     <!-- <script src="//at.alicdn.com/t/font_2390654_3jlpxsgs37e.js"></script> -->
     <script src="src/svg.js"></script>
