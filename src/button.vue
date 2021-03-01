@@ -8,7 +8,11 @@
    </button>
 </template>
 <script>
+    import Icon from './icon'
 export default {
+    components:{
+        'g-icon':Icon
+    },
     props:{
         'icon':{},
         'iconPosition':{
@@ -43,7 +47,7 @@ export default {
         &:hover { border-color: var(--border-color-hover);}
         &:active {background-color: var(--button-active-bg);}
         &:focus {outline: none;}
-        //>为子类选择器 order1在前2在后
+        //>为子类选择器 order设置icon位置的左右 1在左2在右
         >.icon{ order: 1;margin-right: .3em;margin-left: 0;}
         >.content{order:2;}
         &.icon-right{
