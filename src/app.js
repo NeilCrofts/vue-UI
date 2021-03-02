@@ -14,7 +14,11 @@ var vm = new Vue({
         isLoading2: false,
         isLoading3: false,
     },
-    methods: {}
+    methods: {
+        inputChange(e) {
+            console.log(e.target);
+        }
+    }
 });
 
 
