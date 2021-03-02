@@ -46,6 +46,8 @@
             <g-input value='王五' readonly></g-input>
             <g-input value='王' error='姓名不能少于两个字'></g-input>
             <g-input value='刘老六' @change='inputChange'></g-input>
+            <g-input value='hi' v-model='message'></g-input>
+            <p>{{message}}</p>
 
         </div>
         <g-button icon='' :is-loading='isLoading1' @click='isLoading1=!isLoading1'>

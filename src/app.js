@@ -13,6 +13,7 @@ var vm = new Vue({
         isLoading1: true,
         isLoading2: false,
         isLoading3: false,
+        message: 'Hello'
     },
     methods: {
         inputChange(e) {

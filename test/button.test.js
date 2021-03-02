@@ -6,7 +6,7 @@ Vue.config.productionTip = false
 Vue.config.devtools = false
 
 describe('Button', () => {
-    //BDD行为驱动测试 Mocha
+    //BDD行为驱动测试 describe和it由 Mocha 引入
     it('存在.', () => {
         expect(Button).to.exist
             //expect(Button).to.be.ok  不是 underfied null '' 0
@@ -71,11 +71,11 @@ describe('Button', () => {
     it('点击 button 触发 click 事件', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
-            propsData: {
-                icon: 'settings',
-            }
-        }).$mount()
-
+                propsData: {
+                    icon: 'settings',
+                }
+            }).$mount()
+            //sinon.fake 由 sinon 引入 判断是否触发了回调函数
         const callback = sinon.fake();
         vm.$on('click', callback)
         vm.$el.click()
