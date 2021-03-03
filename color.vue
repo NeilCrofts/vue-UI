@@ -50,7 +50,8 @@ $Green-leaf绿叶-5-rgba: rgba(219,93,73, 1);
 <style lang="scss">
     .color1{color: #0A8AC2;}
     .color2{color: #0AAACC;color: rgba(10,170,204);}
-    .color3{color: #00ACB5;}
+    .color3{color: #00ACB5;color: rgba(0,172,181);}
     .color4{color: #0ACCBC;}
     .color5{color: #0AC299;}
+    .color6{ color:rgba(79,179,179)}
 </style>

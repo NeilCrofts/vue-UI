@@ -1,11 +1,52 @@
 <template>
     <div class="toast">
-        <slot></slot>
+        <div class="message">
+            <slot></slot>
+        </div>
+        <div class="line"></div>
+        <span class="close" v-if='closeButton' @click='onClickclose'>{{closeButton.text}}</span>
     </div>
 </template>
 <script>
 export default {
-    name:'NeilToust'
+    name:'NeilToust',
+    props:{
+        autoClose:{
+            type:Boolean,
+            default:true
+        },
+        autoCloseDelay:{
+            type:Number,
+            default:50
+        },
+        closeButton:{
+            type:Object,
+            default(){ //默认：props没从plugin.js接收到closeBunton的情况下
+                return{
+                text:'关闭',callback:undefined
+                }
+            }
+        }
+    },
+    mounted(){
+        if(this.autoClose){
+            setTimeout(()=>{
+                this.close();
+            },this.autoCloseDelay*1000)
+        }
+    },
+    methods:{
+        close(){
+            this.$el.remove()
+            this.$destroy()
+        },
+        onClickclose(){
+            this.close()
+            if(this.closeButton && typeof this.closeButton.callback === 'function'){
+                this.closeButton.callback()
+            }
+        }
+    }
 }
 </script>
 <style lang="scss">
@@ -21,5 +62,18 @@ export default {
     border-radius: 4px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50);
     padding: 0 16px;
+    .message {
+      padding: 8px 0;
+    }
+    .close {
+      padding-left: 16px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .line {
+      height: 100%;
+      border-left: 1px solid #666;
+      margin-left: 16px;
+    }
   }
 </style>

@@ -39,7 +39,15 @@ var vm = new Vue({
             console.log(e.target);
         },
         showToast() {
-            this.$toast('toast message')
+            //调用plugin.js绑定的Vue原型方法
+            this.$toast('toast message', {
+                closeButton: {
+                    text: '知道了',
+                    callback: () => {
+                        console.log('用户说他知道了');
+                    }
+                }
+            })
         }
     },
     created() {}

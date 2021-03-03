@@ -8,12 +8,15 @@
  let validator = (value)=>{
       let keys = Object.keys(value)
       let valid = true
-      if(!['span','offset'].includes(keys)){
-        valid = false 
+      keys.forEach(key => {
+      if (!['span', 'offset'].includes(key)) {
+        valid = false
       }
+     })
       return valid
     }
 export default {
+    name:'NeilCol',
     props:{
         span:{
             type:[String,Number]
