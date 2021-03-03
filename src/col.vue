@@ -39,7 +39,7 @@ export default {
     .col {
     height: 100px;
     width: 50%;
-    
+    border: 1px solid crimson;
     $class-prefix: col-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
