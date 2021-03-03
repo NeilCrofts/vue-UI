@@ -40,13 +40,14 @@ var vm = new Vue({
         },
         showToast() {
             //调用plugin.js绑定的Vue原型方法
-            this.$toast('toast message', {
+            this.$toast('<strong>toast message</strong>文字', {
                 closeButton: {
                     text: '知道了',
                     callback: () => {
                         console.log('用户说他知道了');
                     }
-                }
+                },
+                enableHtml: false
             })
         }
     },
