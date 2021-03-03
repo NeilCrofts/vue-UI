@@ -21,7 +21,6 @@ export default {
         offset:{
             type:[String,Number]
         },
-      phone: {type: Object, validator,},
       ipad: {type: Object, validator,},
       narrowPc: {type: Object, validator,},
       pc: {type: Object, validator,},
@@ -44,7 +43,6 @@ export default {
                 return [
                   span && `col-${span}`,
                   offset && `offset-${offset}`,
-                  ...(phone && `col-phone-${phone.span}`),
                   ...(ipad && [`col-ipad-${ipad.span}`]),
                   ...(narrowPc && [`col-narrow-pc-${narrowPc.span}`]),
                   ...(pc && [`col-pc-${pc.span}`]),
@@ -74,20 +72,6 @@ export default {
       }
     }
     //响应式 媒体查询
-    @media (max-width: 576px) {
-      $class-prefix: col-phone-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          width: ($n / 24) * 100%;
-        }
-      }
-      $class-prefix: offset-phone-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          margin-left: ($n / 24) * 100%;
-        }
-      }
-    }
     @media (min-width: 577px) and (max-width: 768px) {
       $class-prefix: col-ipad-;
       @for $n from 1 through 24 {
