@@ -13,12 +13,6 @@
 .Green-leaf绿叶-4-rgba { color: rgba(230, 228, 226, 1); }
 .Green-leaf绿叶-5-rgba { color: rgba(219, 93, 73, 1); }
 
-/* Color Theme Swatches in HSLA */
-.Green-leaf绿叶-1-hsla { color: hsla(129, 97, 27, 1); }
-.Green-leaf绿叶-2-hsla { color: hsla(124, 98, 22, 1); }
-.Green-leaf绿叶-3-hsla { color: hsla(83, 35, 40, 1); }
-.Green-leaf绿叶-4-hsla { color: hsla(20, 5, 89, 1); }
-.Green-leaf绿叶-5-hsla { color: hsla(8, 66, 57, 1); }
 
 
 </style>
@@ -37,12 +31,6 @@ $Green-leaf绿叶-3-rgba: rgba(110,140,66, 1);
 $Green-leaf绿叶-4-rgba: rgba(230,228,226, 1);
 $Green-leaf绿叶-5-rgba: rgba(219,93,73, 1);
 
-/* Color Theme Swatches in HSLA */
-$Green-leaf绿叶-1-hsla: hsla(129, 97, 27, 1);
-$Green-leaf绿叶-2-hsla: hsla(124, 98, 22, 1);
-$Green-leaf绿叶-3-hsla: hsla(83, 35, 40, 1);
-$Green-leaf绿叶-4-hsla: hsla(20, 5, 89, 1);
-$Green-leaf绿叶-5-hsla: hsla(8, 66, 57, 1);
 </style>
 <style lang="css">
     /* Color Theme Swatches in Hex */
@@ -58,33 +46,11 @@ $Green-leaf绿叶-5-hsla: hsla(8, 66, 57, 1);
 .Firenze-3-rgba { color: rgba(255, 175, 59, 1); }
 .Firenze-4-rgba { color: rgba(182, 73, 38, 1); }
 .Firenze-5-rgba { color: rgba(142, 40, 0, 1); }
-
-/* Color Theme Swatches in HSLA */
-.Firenze-1-hsla { color: hsla(148, 32, 40, 1); }
-.Firenze-2-hsla { color: hsla(49, 100, 82, 1); }
-.Firenze-3-hsla { color: hsla(35, 100, 61, 1); }
-.Firenze-4-hsla { color: hsla(14, 65, 43, 1); }
-.Firenze-5-hsla { color: hsla(16, 100, 27, 1); }
 </style>
-<style lang="sass">
-    /* Color Theme Swatches in Hex */
-$Firenze-1-hex: #468966;
-$Firenze-2-hex: #FFF0A5;
-$Firenze-3-hex: #FFB03B;
-$Firenze-4-hex: #B64926;
-$Firenze-5-hex: #8E2800;
-
-/* Color Theme Swatches in RGBA */
-$Firenze-1-rgba: rgba(70,137,102, 1);
-$Firenze-2-rgba: rgba(255,239,165, 1);
-$Firenze-3-rgba: rgba(255,175,59, 1);
-$Firenze-4-rgba: rgba(182,73,38, 1);
-$Firenze-5-rgba: rgba(142,40,0, 1);
-
-/* Color Theme Swatches in HSLA */
-$Firenze-1-hsla: hsla(148, 32, 40, 1);
-$Firenze-2-hsla: hsla(49, 100, 82, 1);
-$Firenze-3-hsla: hsla(35, 100, 61, 1);
-$Firenze-4-hsla: hsla(14, 65, 43, 1);
-$Firenze-5-hsla: hsla(16, 100, 27, 1);
+<style lang="scss">
+    .color1{color: #0A8AC2;}
+    .color2{color: #0AAACC;}
+    .color3{color: #00ACB5;}
+    .color4{color: #0ACCBC;}
+    .color5{color: #0AC299;}
 </style>
