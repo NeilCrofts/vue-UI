@@ -42,10 +42,13 @@
     <div id="app">
         <div style="border: 1px solid black;">
             <g-row gutter="20">
-                <g-col span='2'>2</g-col>
-                <g-col span='22'>22</g-col>
+                <g-col span="2" :phone="{span:24}" :ipad="{span:8}" :narrow-pc="{span:4}" :pc="{span:2}" :wide-pc="{span:1}">
+                    1
+                </g-col>
+                <g-col span="22" :phone="{span:24}" :ipad="{span:16}" :narrow-pc="{span:20}" :pc="{span:22}" :wide-pc="{span:23}">11
+                </g-col>
             </g-row>
-            <g-row>
+            <!-- <g-row>
                 <g-col span='6'>6</g-col>
                 <g-col span='16' offset='2'>16</g-col>
             </g-row>
@@ -71,7 +74,7 @@
             </g-row>
             <g-row align='center'>
                 <g-col>居中</g-col>
-            </g-row>
+            </g-row> -->
         </div>
         <div>
             <g-input value='张三'></g-input>
