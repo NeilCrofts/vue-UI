@@ -38,7 +38,16 @@ var vm = new Vue({
         inputChange(e) {
             console.log(e.target);
         },
-        showToast() {
+        showToast1() {
+            this.showToast('top')
+        },
+        showToast2() {
+            this.showToast('middle')
+        },
+        showToast3() {
+            this.showToast('bottom')
+        },
+        showToast(position) {
             //调用plugin.js绑定的Vue原型方法
             this.$toast(`你的智商余额为:${parseInt(Math.random()*100)},请充值`, {
                 closeButton: {
@@ -50,7 +59,7 @@ var vm = new Vue({
                 enableHtml: true,
                 autoClose: false,
                 autoCloseDelay: 3,
-                position: 'middle'
+                position,
             })
         }
     },
