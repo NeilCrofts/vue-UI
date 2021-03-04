@@ -47,7 +47,10 @@ var vm = new Vue({
                         console.log('用户说他知道了');
                     }
                 },
-                enableHtml: false
+                enableHtml: true,
+                autoClose: false,
+                autoCloseDelay: 3,
+                position: 'middle'
             })
         }
     },

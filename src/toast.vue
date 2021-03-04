@@ -1,5 +1,5 @@
 <template>
-    <div class="toast" ref="wrapper">
+    <div class="toast" ref="wrapper" :class="toastClasses">
         <slot v-if="!enableHtml"></slot>
         <div v-else class="message" v-html="$slots.default[0]"></div>
         <div class="line" ref="line"></div>
@@ -16,7 +16,7 @@ export default {
         },
         autoCloseDelay:{
             type:Number,
-            default:50
+            default:5
         },
         closeButton:{
             type:Object,
@@ -29,6 +29,13 @@ export default {
         enableHtml:{
             type:Boolean,
             default:false
+        },
+        position:{
+            type:String,
+            default:'top',
+            validator(value){
+                return ['top','middle','bottom'].indexOf(value)>=0;
+            }
         }
     },
     mounted(){
@@ -59,6 +66,13 @@ export default {
                 this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height}px`
         })
         }
+    },
+    computed:{
+        toastClasses(){
+            return{
+                ['position-'+this.position]:true
+            }
+        }
     }
 }
 </script>
@@ -68,7 +82,7 @@ export default {
     $toast-bg: rgba(10,170,204,0.8);
   .toast {
     font-size: $font-size; min-height: $min-toast-height; line-height: 1.8;
-    position: fixed; top: 0; left: 50%; transform: translateX(-50%); display: flex;
+    position: fixed; left: 50%;  display: flex;
     color: white;
     align-items: center;
     background: $toast-bg;
@@ -88,5 +102,18 @@ export default {
       border-left: 1px solid #666;
       margin-left: 16px;
     }
+    &.position-top{
+      top: 0;
+      transform: translateX(-50%);
+    }
+    &.position-middle{
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    &.position-bottom{
+      bottom: 0;
+      transform: translateX(-50%);
+    }
   }
+  
 </style>
