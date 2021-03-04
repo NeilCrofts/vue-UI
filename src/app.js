@@ -40,9 +40,9 @@ var vm = new Vue({
         },
         showToast() {
             //调用plugin.js绑定的Vue原型方法
-            this.$toast('<strong>toast message</strong>文字', {
+            this.$toast(`你的智商余额为:${parseInt(Math.random()*100)},请充值`, {
                 closeButton: {
-                    text: '知道了',
+                    text: '马上充值',
                     callback: () => {
                         console.log('用户说他知道了');
                     }
