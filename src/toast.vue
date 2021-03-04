@@ -64,11 +64,9 @@ export default {
         },
         updateStyles(){
         // console.log(this.$refs.wrapper,this.$refs.line,this.$refs);
-        this.$nextTick(()=>{
+            this.$nextTick(()=>{
+                this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
         })
-        setTimeout(()=>{
-            this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
-        },0)
         }
     },
     computed:{
