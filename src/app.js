@@ -57,8 +57,7 @@ var vm = new Vue({
                     }
                 },
                 enableHtml: true,
-                autoClose: false,
-                autoCloseDelay: 3,
+                autoClose: 3,
                 position,
             })
         }

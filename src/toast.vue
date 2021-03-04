@@ -13,12 +13,11 @@ export default {
     name:'NeilToust',
     props:{
         autoClose:{
-            type:Boolean,
-            default:true
-        },
-        autoCloseDelay:{
-            type:Number,
-            default:5
+            type:[Boolean,Number],
+            default:5,
+            validator(value){
+                return value===false || typeof value==='number';
+            }
         },
         closeButton:{
             type:Object,
@@ -60,14 +59,16 @@ export default {
             if(this.autoClose){
                 setTimeout(()=>{
                     this.close();
-                },this.autoCloseDelay*1000)
+                },this.autoClose*1000)
             }
         },
         updateStyles(){
         // console.log(this.$refs.wrapper,this.$refs.line,this.$refs);
-            this.$nextTick(()=>{
-                this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
+        this.$nextTick(()=>{
         })
+        setTimeout(()=>{
+            this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
+        },0)
         }
     },
     computed:{
