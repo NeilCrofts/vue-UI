@@ -39,7 +39,35 @@
 <body>
 
     <div id="app">
-        <button @click='showToast1'>top</button>
+        <g-tabs :selected.sync='selectedTab'>
+            <g-tabs-head>
+                <template slot="actions">
+                    <button>设置</button>
+                </template>
+                <g-tabs-item name='basketball'>
+                    篮球
+                </g-tabs-item>
+                <g-tabs-item name='football'>
+                    <g-icon name='setting'></g-icon>足球
+                </g-tabs-item>
+                <g-tabs-item name='volleyball' disabled>
+                    排球
+                </g-tabs-item>
+            </g-tabs-head>
+            <g-tabs-body>
+                <g-tabs-pane name='basketball'>
+                    篮球相关资讯
+                </g-tabs-pane>
+                <g-tabs-pane name='football'>
+                    足球相关资讯
+                </g-tabs-pane>
+                <g-tabs-pane name='volleyball'>
+                    排球相关资讯
+                </g-tabs-pane>
+            </g-tabs-body>
+        </g-tabs>
+        <hr>
+        <!-- <button @click='showToast1'>top</button>
         <button @click='showToast2'>middle</button>
         <button @click='showToast3'>bottom</button>
         <br>
@@ -78,7 +106,8 @@
             <g-row align='center'>
                 <g-col>居中</g-col>
             </g-row>
-        </div>
+        </div> -->
+
         <!-- <div>
             <g-input value='张三'></g-input>
             <g-input value='李四' disabled></g-input>
@@ -89,6 +118,7 @@
             <p>{{message}}</p>
 
         </div> -->
+
         <!-- <g-button icon='' :is-loading='isLoading1' @click='isLoading1=!isLoading1'>
             按钮
         </g-button>
@@ -114,7 +144,7 @@
     </div>
 
     <script src="src/app.js"></script>
-    <script src="src/svg.js"></script>
+    <!-- <script src="src/svg.js"></script> -->
 </body>
 
 </html>
