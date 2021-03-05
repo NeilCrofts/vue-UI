@@ -1,11 +1,16 @@
 <template>
-    <div class="tabs-item" @click='xxx'>
+    <div class="tabs-item" @click='xxx' :class="classes">
          <slot></slot>
     </div>
 </template>
 <script>
 export default {
     name:'NeilTabsItem',
+    data(){
+        return{
+            active:false
+        }
+    },
     props: {
       disabled: {
         type: Boolean,
@@ -16,12 +21,19 @@ export default {
           require:true
       }
     },
+    computed: {
+        classes(){
+            return {active:this.active}
+        }
+    },
      inject:['eventBus'],
     created(){
-        // console.log('爷爷给孙子的 eventBus');
-        // console.log(this.eventBus);
         this.eventBus.$on('update:selected',(name)=>{
-            console.log(name);
+           if(name===this.name){
+                this.active = true
+            }else{
+                this.active = false
+            }
         })
 
     },
@@ -33,6 +45,13 @@ export default {
 
 }
 </script>
-<style lang="scss">
-    
+<style lang="scss" scoped>
+    .tabs-item{
+        flex-shrink: 0;
+        padding: 0 1em;
+        cursor: pointer;
+         &.active{
+            background-color: sandybrown;
+        }
+    }
 </style>
