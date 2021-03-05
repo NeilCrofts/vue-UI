@@ -12,6 +12,11 @@ import Content from './content'
 import Footer from './footer'
 import Toast from './toast'
 import plugin from './plugin'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
 Vue.component('g-button', Button)
 Vue.component('g-icon', icon)
 Vue.component('g-button-group', ButtonGroup)
@@ -25,6 +30,11 @@ Vue.component('g-footer', Footer)
 Vue.component('g-sider', Sider)
 Vue.component('g-toast', Toast)
 Vue.use(plugin)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-pane', TabsPane)
 
 var vm = new Vue({
     el: '#app',
@@ -32,7 +42,8 @@ var vm = new Vue({
         isLoading1: true,
         isLoading2: false,
         isLoading3: false,
-        message: 'Hello'
+        message: 'Hello',
+        selectedTab: 'basketball'
     },
     methods: {
         inputChange(e) {
