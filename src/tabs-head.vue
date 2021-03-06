@@ -18,10 +18,13 @@ export default {
     },
     mounted(){
         this.eventBus.$on('update:selected',(item,vm)=>{
-            this.isShow=true    //解决初始打开时下划线会移动问题
+             //解决初始打开时下划线会移动问题
+            this.isShow=true   
+            //确定下划线的位置和宽度
+            let parentLeft = vm.$parent.$el.getBoundingClientRect().left;
             let {width,left} = vm.$el.getBoundingClientRect()
             this.$refs.line.style.width = width+'px'
-            this.$refs.line.style.transform = `translateX(${left}px)`
+            this.$refs.line.style.transform = `translateX(${left-parentLeft}px)`
         })
     }
 }
@@ -29,6 +32,7 @@ export default {
 <style lang="scss" scoped>
     $tab-height:40px;
     $active-color:rgba(0,172,181,1);
+    $border-color:#ddd;
     .tabs-head{
         display: flex;
         position: relative;
@@ -36,9 +40,13 @@ export default {
         line-height: $tab-height;
         justify-content: flex-start;
         align-items: center;
-        border: 1px solid salmon;
+        border-bottom: 1px solid $border-color;
         >.actions-wrapper{
             margin-left: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1em;
         }
         >.line{
             position: absolute;

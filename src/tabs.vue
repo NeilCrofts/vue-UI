@@ -44,7 +44,7 @@ export default {
                     //  console.log(childVm);
                 if(childVm.$options.name === 'NeilTabsItem' && childVm.name === this.selected){
                     //确定孙子组件tabs-childVm的初始状态,并得到（将childVm传出）
-                    console.log(childVm.$el);
+                    // console.log(childVm.$el);
                     this.eventBus.$emit('update:selected',this.selected,childVm)
                     }
                 })
