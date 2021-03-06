@@ -40,12 +40,12 @@ export default {
          //为得到子组件tab的位置
          this.$children.forEach((vm)=>{
              if(vm.$options.name==='NeilTabsHead'){
-                 vm.$children.forEach((item)=>{
-                    //  console.log(item);
-                if(item.$options.name === 'NeilTabsItem' && item.name === this.selected){
-                    //确定孙子组件tabs-item的初始状态,并得到（将item传出）
-                    console.log(item.$el);
-                    this.eventBus.$emit('update:selected',this.selected,item)
+                 vm.$children.forEach((childVm)=>{
+                    //  console.log(childVm);
+                if(childVm.$options.name === 'NeilTabsItem' && childVm.name === this.selected){
+                    //确定孙子组件tabs-childVm的初始状态,并得到（将childVm传出）
+                    console.log(childVm.$el);
+                    this.eventBus.$emit('update:selected',this.selected,childVm)
                     }
                 })
              }
