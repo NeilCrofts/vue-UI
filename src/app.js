@@ -43,7 +43,7 @@ var vm = new Vue({
         isLoading2: false,
         isLoading3: false,
         message: 'Hello',
-        selectedTab: 'volleyball'
+        selectedTab: 'football'
     },
     methods: {
         inputChange(e) {
