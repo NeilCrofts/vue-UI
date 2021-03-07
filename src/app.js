@@ -48,6 +48,9 @@ var vm = new Vue({
         selectedTab: 'football'
     },
     methods: {
+        yyy() {
+            console.log('yyy');
+        },
         inputChange(e) {
             console.log(e.target);
         },

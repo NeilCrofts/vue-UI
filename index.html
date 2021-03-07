@@ -26,7 +26,7 @@
         }
         
         #app {
-            margin: 20px;
+            margin: 100px;
         }
         
         body {
@@ -38,19 +38,21 @@
 
 <body>
 
-    <div id="app" style="margin: 100px;">
-        <g-popover>
-            <template slot="content">
+    <div id="app">
+        <div style="border:1px solid red;padding:10px;overflow:hidden" @click='yyy'>
+            <g-popover>
+                <template slot="content">
                 <div>popover内容</div>
             </template>
-            <button>点击</button>
-        </g-popover>
-        <g-popover>
-            <template slot="content">
+                <button>点击</button>
+            </g-popover>
+            <g-popover>
+                <template slot="content">
                 <div>popover内容</div>
             </template>
-            <button>点击</button>
-        </g-popover>
+                <button>点击</button>
+            </g-popover>
+        </div>
         <hr>
         <!-- <g-tabs :selected.sync='selectedTab'>
             <g-tabs-head>
