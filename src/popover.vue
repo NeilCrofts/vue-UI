@@ -1,6 +1,6 @@
 <template>
-    <div class="popover" @click="xxx">
-        <div class="content-wrapper" v-if="visible">
+    <div class="popover" @click.stop="xxx">
+        <div class="content-wrapper" v-if="visible" @click.stop>
             <slot name="content"></slot>
         </div>
         <slot></slot>
@@ -15,6 +15,18 @@ export default {
     methods:{
         xxx(){
             this.visible=!this.visible
+            console.log(this.visible,'切换visible');
+            if(this.visible===true){
+                let eventHandle = ()=>{//点击按钮后再点击一次，还会触发该事件，因为第一次按钮生成的document监听事件还没有移除，再点击按钮冒泡触发了该事件
+                    this.visible = false
+                    console.log(this.visible,'点击body关闭popover')
+                    document.removeEventListener('click',eventHandle)
+                }
+               setTimeout(()=>{
+                   //当xxx方法一执行，该click事件就新建并调用了，故需要用异步
+                    document.addEventListener('click',eventHandle)
+                })
+            }
         }
     }
 }
