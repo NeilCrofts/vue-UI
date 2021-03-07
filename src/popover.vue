@@ -30,8 +30,8 @@ export default {
                     document.body.append(this.$refs.contentWrapper);
                     let {left,top,width} = this.$refs.triggerWrapper.getBoundingClientRect();
                     console.log(left,top);
-                    this.$refs.contentWrapper.style.left = left+'px';
-                    this.$refs.contentWrapper.style.top = top-width+'px';
+                    this.$refs.contentWrapper.style.left = left+window.scrollX+'px';
+                    this.$refs.contentWrapper.style.top = top-width+window.scrollY+'px';
                    //当xxx方法一执行，该click事件就新建并调用了，故需要用异步
                     document.addEventListener('click',eventHandle)
                 })
