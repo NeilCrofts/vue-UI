@@ -39,22 +39,27 @@ export default {
             document.body.append(contentWrapper);
             //确定button位置--》进而设置popover内容位置
             let {left,top,height,width} = triggerWrapper.getBoundingClientRect();
-            
-            if(this.position==='top'){
-                contentWrapper.style.left = left+window.scrollX+'px';
-                contentWrapper.style.top = top+window.scrollY+'px';
-            }else if(this.position==='bottom'){
-                contentWrapper.style.left = left+window.scrollX+'px';
-                contentWrapper.style.top = top+height+window.scrollY+'px';
-            }else if(this.position === 'left'){
-                let {height:height2} = contentWrapper.getBoundingClientRect();
-                contentWrapper.style.left = left+window.scrollX+'px';
-                contentWrapper.style.top = top-(height2-height)/2+window.scrollY+'px';
-            }else if(this.position === 'right'){
-                let {height:height2} = contentWrapper.getBoundingClientRect();
-                contentWrapper.style.left = left+width+window.scrollX+'px';
-                contentWrapper.style.top = top-(height2-height)/2+window.scrollY+'px';
+            let {height:height2} = contentWrapper.getBoundingClientRect();
+            let positions={
+                top:{
+                    left:left+window.scrollX,
+                    top:top+window.scrollY
+                },
+                left:{
+                    left:left+window.scrollX,
+                    top:top-(height2-height)/2+window.scrollY
+                },
+                bottom:{
+                    left:left+window.scrollX,
+                    top:top+height+window.scrollY
+                },
+                right:{
+                    left:left+width+window.scrollX,
+                    top:top-(height2-height)/2+window.scrollY
+                }
             }
+            contentWrapper.style.left = positions[this.position].left+'px';
+            contentWrapper.style.top = positions[this.position].top+'px';
             
         },
         onClickDocument(e){//点击按钮后再点击一次，还会触发该事件，因为第一次按钮生成的document监听事件还没有移除，再点击按钮冒泡触发了该事件
