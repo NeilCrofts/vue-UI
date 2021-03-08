@@ -1,6 +1,7 @@
 <template>
     <div class="popover" @click="onClick">
-        <div ref="contentWrapper" class="content-wrapper" v-if="visible">
+        <div ref="contentWrapper" class="content-wrapper" v-if="visible"
+        :class="{[`position-${position}`]:true}">
             <slot name="content"></slot>
         </div>
         <!-- 添加span为获取slot或确定slot位置 -->
@@ -13,7 +14,18 @@
 export default {
     name:'NeilPopover',
     data() {
-        return {visible:false}
+        return {
+            visible:false,
+        }
+    },
+    props:{
+         position:{
+                type:String,
+                default:'top',
+                validator(value){
+                return ['top','bottom','left','right'].indexOf(value)>=0;
+                }
+            }
     },
     methods:{
         close(){
@@ -22,12 +34,28 @@ export default {
             document.removeEventListener('click',this.onClickDocument)
         },
         contentPosition(){
+            const {contentWrapper,triggerWrapper} = this.$refs
             //移动一个元素的位置，不会影响其功能，绑定的事件也能触发
-            document.body.append(this.$refs.contentWrapper);
+            document.body.append(contentWrapper);
             //确定button位置--》进而设置popover内容位置
-            let {left,top} = this.$refs.triggerWrapper.getBoundingClientRect();
-            this.$refs.contentWrapper.style.left = left+window.scrollX+'px';
-            this.$refs.contentWrapper.style.top = top+window.scrollY+'px';
+            let {left,top,height,width} = triggerWrapper.getBoundingClientRect();
+            
+            if(this.position==='top'){
+                contentWrapper.style.left = left+window.scrollX+'px';
+                contentWrapper.style.top = top+window.scrollY+'px';
+            }else if(this.position==='bottom'){
+                contentWrapper.style.left = left+window.scrollX+'px';
+                contentWrapper.style.top = top+height+window.scrollY+'px';
+            }else if(this.position === 'left'){
+                let {height:height2} = contentWrapper.getBoundingClientRect();
+                contentWrapper.style.left = left+window.scrollX+'px';
+                contentWrapper.style.top = top-(height2-height)/2+window.scrollY+'px';
+            }else if(this.position === 'right'){
+                let {height:height2} = contentWrapper.getBoundingClientRect();
+                contentWrapper.style.left = left+width+window.scrollX+'px';
+                contentWrapper.style.top = top-(height2-height)/2+window.scrollY+'px';
+            }
+            
         },
         onClickDocument(e){//点击按钮后再点击一次，还会触发该事件，因为第一次按钮生成的document监听事件还没有移除，再点击按钮冒泡触发了该事件
             //不用冒泡，如果是popover弹窗内容，则不关闭
@@ -70,27 +98,78 @@ export default {
             // box-shadow: 0 0 5px rgba(0,0,0,0.5);
             filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
             background-color: white;
-            transform: translateY(-100%);
-            margin-top: -10px;
             padding: .5em 1em;
             max-width: 20em;
             word-break: break-all;
-            &::before,&::after{
-                content: '';
-                display: block;
-                border: 10px solid transparent;
-                width: 0;
-                height: 0;
-                position: absolute;
-                left: 10px;
+             &::before,&::after{
+                    content: '';
+                    display: block;
+                    border: 10px solid transparent;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+             }
+            &.position-top{
+                transform: translateY(-100%);
+                margin-top: -10px;
+                &::before,&::after{
+                    left: 10px;
+                }
+                &::before{
+                    border-top-color: black;
+                    top: 100%;
+                }
+                &::after{
+                    border-top-color: white;
+                    top: calc(100% - 1px);
+                }
             }
-            &::before{
-                border-top-color: black;
-                top: 100%;
+            &.position-bottom{
+                margin-top: 10px;
+                &::before,&::after{
+                    left: 10px;
+                }
+                &::before{
+                    border-bottom-color: black;
+                    bottom: 100%;
+                }
+                &::after{
+                    border-bottom-color: white;
+                    bottom: calc(100% - 1px)
+                }
+                
             }
-            &::after{
-                border-top-color: white;
-                top: calc(100% - 1px);
+            &.position-left{
+                transform: translateX(-100%);
+                margin-left: -10px;
+                &::before,&::after{
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &::before{
+                    border-left-color: black;
+                    left: 100%;
+                }
+                &::after{
+                    border-left-color: white;
+                    left: calc(100% - 1px)
+                }
+
+            }   
+             &.position-right{
+                margin-left: 10px;
+                &::before,&::after{
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &::before{
+                    border-right-color: black;
+                    right: 100%;
+                }
+                &::after{
+                    border-right-color: white;
+                    right: calc(100% - 1px)
+                }
             }
         }
 </style>
