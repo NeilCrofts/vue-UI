@@ -1,5 +1,5 @@
 <template>
-    <div class="popover" @click="onClick">
+    <div class="popover" ref="popover">
         <div ref="contentWrapper" class="content-wrapper" v-if="visible"
         :class="{[`position-${position}`]:true}">
             <slot name="content"></slot>
@@ -18,12 +18,53 @@ export default {
             visible:false,
         }
     },
+    computed:{
+        openEvent(){
+            if(this.trigger === 'click'){
+                return 'click'
+            }else{
+                return 'mouseenter'
+            }
+        },
+        closeEvent(){
+            if(this.trigger === 'click'){
+                return 'click'
+            }else{
+                return 'mouseleave'
+            }
+        }
+    },
+    mounted(){
+        //判断绑定什么事件
+        if(this.trigger==='click'){
+            this.$refs.popover.addEventListener('click',this.onClick);
+        }else{
+            this.$refs.popover.addEventListener('mouseenter',this.open)
+            this.$refs.popover.addEventListener('mouseleave',this.close)
+        }
+    },
+    destroyed(){
+        //这种事件绑定方式需要手动销毁
+        if(this.trigger==='click'){
+                this.$refs.popover.removeEventListener('click',this.onClick);
+            }else{
+                this.$refs.popover.removeEventListener('mouseenter',this.open)
+                this.$refs.popover.removeEventListener('mouseleave',this.close)
+            }
+    },
     props:{
          position:{
                 type:String,
                 default:'top',
                 validator(value){
                 return ['top','bottom','left','right'].indexOf(value)>=0;
+                }
+            },
+            trigger:{
+                type:String,
+                default:'click',
+                validator(value){
+                    return ['click','hover'].indexOf(value)>=0;
                 }
             }
     },
@@ -60,7 +101,6 @@ export default {
             }
             contentWrapper.style.left = positions[this.position].left+'px';
             contentWrapper.style.top = positions[this.position].top+'px';
-            
         },
         onClickDocument(e){//点击按钮后再点击一次，还会触发该事件，因为第一次按钮生成的document监听事件还没有移除，再点击按钮冒泡触发了该事件
             //不用冒泡，如果是popover弹窗内容，则不关闭
