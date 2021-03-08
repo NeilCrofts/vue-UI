@@ -18,22 +18,6 @@ export default {
             visible:false,
         }
     },
-    computed:{
-        openEvent(){
-            if(this.trigger === 'click'){
-                return 'click'
-            }else{
-                return 'mouseenter'
-            }
-        },
-        closeEvent(){
-            if(this.trigger === 'click'){
-                return 'click'
-            }else{
-                return 'mouseleave'
-            }
-        }
-    },
     mounted(){
         //判断绑定什么事件
         if(this.trigger==='click'){
@@ -51,7 +35,7 @@ export default {
                 this.$refs.popover.removeEventListener('mouseenter',this.open)
                 this.$refs.popover.removeEventListener('mouseleave',this.close)
             }
-    },
+        },
     props:{
          position:{
                 type:String,
