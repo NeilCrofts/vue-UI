@@ -32,16 +32,17 @@ export default {
         }
     },
     created () {
-        // console.log(this);
-        // console.log(this.eventBus);
-        // this.$emit('update:selected', 'xxx')
+        
     },
-     mounted(){
+    methods:{
+        checkChildern(){
         if (this.$children.length === 0) {
-        console && console.warn &&
-        console.warn('tabs的子组件应该是tabs-head和tabs-nav，但你没有写子组件')
-      }
-         //为得到子组件tab的位置
+            console && console.warn &&
+            console.warn('tabs的子组件应该是tabs-head和tabs-nav，但你没有写子组件')
+            }
+        },
+        selectTab(){
+            //为得到子组件tab的位置
          this.$children.forEach((vm)=>{
              if(vm.$options.name==='NeilTabsHead'){
                  vm.$children.forEach((childVm)=>{
@@ -54,6 +55,11 @@ export default {
                 })
              }
          })
+        }
+    },
+     mounted(){
+         this.checkChildern()
+         this.selectTab()
     }
 }
 </script>
