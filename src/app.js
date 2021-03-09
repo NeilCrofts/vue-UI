@@ -49,7 +49,7 @@ var vm = new Vue({
         isLoading2: false,
         isLoading3: false,
         message: 'Hello',
-        selectedTab: '2',
+        selectedTab: ['2'],
     },
     methods: {
         yyy() {

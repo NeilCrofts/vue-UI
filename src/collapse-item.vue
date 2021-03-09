@@ -21,32 +21,30 @@ export default {
     },
     data(){
         return{
-            open:false
+            open:false,
         }
     },
     mounted(){
-        this.eventBus && this.eventBus.$on('update:selected',(name)=>{
-            if(name!==this.name){
-                this.close()
+        //获取父亲传过来的selected，确定初始时的和点击后的关闭状态
+        this.eventBus && this.eventBus.$on('update:selected',(names)=>{
+            if(names.indexOf(this.name)>=0){
+                this.open = true;
             }else{
-                this.show()
+                this.open = false
             }
         })
     },
     methods:{
         toggleState(){
             if(this.open){
-                this.open = false
+                //通知eventBus,向父亲传递name,让父亲发送关闭信息
+                this.eventBus && this.eventBus.$emit('update:removeSelected',this.name)
             }else{
-                this.eventBus && this.eventBus.$emit('update:selected',this.name)
+                //通知eventBus,向父亲传递name,让父亲发送打开信息
+                this.eventBus && this.eventBus.$emit('update:addSelected',this.name)
             }
         },
-        close(){
-            this.open = false
-        },
-        show(){
-            this.open = true
-        }
+
     },
     inject:['eventBus']
 }
