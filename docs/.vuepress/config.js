@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/vue-UI/',
     title: 'Neil UI',
     description: '一个简便易用的UI框架',
     themeConfig: {
@@ -16,7 +17,15 @@ module.exports = {
             },
             {
                 title: '组件',
-                children: ['/components/button']
+                children: [
+                    '/components/button',
+                    '/components/tabs',
+                    '/components/input',
+                    '/components/grid',
+                    '/components/layout',
+                    '/components/toast',
+                    '/components/popover',
+                ]
             }
 
         ],
