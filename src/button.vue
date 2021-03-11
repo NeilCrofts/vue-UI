@@ -1,9 +1,9 @@
 <template>
-   <button class='g-button' :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+   <button class='g-button' :class="{[`icon-${iconPosition}`]:true,[`g-button-${theme}`]:true}" @click="$emit('click')">
         <g-icon v-if='icon && !isLoading' :name='icon' class="icon"></g-icon>
         <g-icon v-if='isLoading' name='loading' class="loading icon"></g-icon>
         <div class="g-button-content">
-            <slot></slot>
+            <span><slot></slot></span>
         </div>
    </button>
 </template>
@@ -14,6 +14,13 @@ export default {
         'g-icon':Icon
     },
     props:{
+        theme:{
+          type:String,
+          default:'default',
+          validator(value){
+           return ['primary','success','wraning','info','danger','text'].indexOf(value)>=0
+          }
+        },
         'icon':{},
         'iconPosition':{
             type:String,
@@ -61,5 +68,70 @@ export default {
     .loading {
       animation: spin 2s infinite linear;
     }
+     &.g-button-primary{
+    background: #00adb5;
+    border: 1px solid #393e46;
+    color: #eeeeee;
+    &:hover,&:focus{
+      color: #eeeeee;
+      border-color: #222831;
+      background-color: #40babf;
+    }
   }
+  &.g-button-success{
+    background: #4ecca3;
+    border: 1px solid #393e46;
+    color: #eeeeee;
+    &:hover,&:focus{
+      color: #eeeeee;
+      border-color: #222831;
+      background-color: #6be3bc;
+    }
+  }
+  &.g-button-danger{
+    background: #d72323;
+    border: 1px solid #d72323;
+    color: #eeeeee;
+    &:hover,&:focus{
+      color: #eeeeee;
+      border-color: #dd5656;
+      background-color: #dd5656;
+    }
+  }
+
+  &.g-button-info{
+    background: #52616b;
+    border: 1px solid #393e46;
+    color: #eeeeee;
+    &:hover,&:focus{
+      color: #eeeeee;
+      border-color: #222831;
+      background-color: #6c777d;
+    }
+  }
+
+  &.g-button-warning{
+    background: #fce38a;
+    border: 1px solid #393e46;
+    color: #4a4444;
+    &:hover,&:focus{
+      color: #8e8282;
+      border-color: #222831;
+      background-color: #f7e4a4;
+    }
+  }
+
+  &.g-button-text{
+    background: #fff;
+    border: 0;
+    color: #4a4444;
+    &:hover,&:focus{
+      span{
+        color: #8e8282;
+        border-color: #222831;
+        background-color: #f7e4a4;
+      }
+    }
+  }
+}
 </style>

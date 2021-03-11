@@ -177,7 +177,9 @@
             <p>{{message}}</p>
 
         </div> -->
-
+        <g-button>
+            默认按钮
+        </g-button>
         <g-button icon='' :is-loading='isLoading1' @click='isLoading1=!isLoading1'>
             按钮
         </g-button>
@@ -190,6 +192,26 @@
         <g-button icon='' :is-loading='true' icon-position='right'>
             按钮
         </g-button>
+        <hr>
+        <g-button theme='primary'>
+            主要按钮
+        </g-button>
+        <g-button theme='success'>
+            成功按钮
+        </g-button>
+        <g-button theme='warning'>
+            警告按钮
+        </g-button>
+        <g-button theme='info'>
+            信息按钮
+        </g-button>
+        <g-button theme='danger'>
+            危险按钮
+        </g-button>
+        <g-button theme='text'>
+            文字按钮
+        </g-button>
+        <hr>
         <g-icon name='download'></g-icon>
         <g-button-group>
             <g-button icon='left'>
