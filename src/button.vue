@@ -46,26 +46,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  $font-size: 14px;
-  $button-height: 40px;
-  $button-bg: white;
-  $button-active-bg: #eee;
-  $border-radius: 4px;
-  $color: #333;
-  $border-color: #999;
-  $border-color-hover: #666;
+
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-  .g-button { font-size: $font-size; height: $button-height;  padding: 0 1em;
-    border-radius: $border-radius; border: 1px solid $border-color;
-    background: $button-bg;
+  .g-button { font-size: 14px; height: 40px;  padding: 0 1em;
+    border-radius: 4px;
     cursor: pointer;
     display: inline-flex; justify-content: center; align-items: center;
     vertical-align: middle;
-    &:hover { border-color: $border-color-hover; }
-    &:active { background-color: $button-active-bg; }
     &:focus { outline: none; }
     > .g-button-content { order: 2; }
     > .icon { order: 1; margin-right: .1em; }
@@ -76,6 +66,15 @@ export default {
     .loading {
       animation: spin 2s infinite linear;
     }
+    &.g-button-default{
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    &:hover,&:focus{
+      color: #222831;
+      border-color: #222831;
+      background-color: #eeeeee;
+    }
+  }
      &.g-button-primary{
     background: #00adb5;
     border: 1px solid #393e46;
