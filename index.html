@@ -180,17 +180,32 @@
         <g-button>
             默认按钮
         </g-button>
-        <g-button icon='' :is-loading='isLoading1' @click='isLoading1=!isLoading1'>
-            按钮
+        <g-button icon='setting'>
+            设置
         </g-button>
-        <g-button icon='setting' icon-position='left' :is-loading='isLoading2' @click='isLoading2=!isLoading2'>
-            按钮
+        <g-button icon='thumbs-up'>
+            点赞
         </g-button>
-        <g-button icon='setting' icon-position='right' :is-loading='isLoading3' @click='isLoading3=!isLoading3'>
-            按钮
+        <g-button icon='download'>
+            下载
         </g-button>
-        <g-button icon='' :is-loading='true' icon-position='right'>
-            按钮
+        <g-button icon='upload'>
+            上传
+        </g-button>
+        <g-button icon='add'>
+            添加
+        </g-button>
+        <g-button icon='remove'>
+            删除
+        </g-button>
+        <g-button icon='click'>
+            点击
+        </g-button>
+        <g-button icon='setting' icon-position='right'>
+            设置
+        </g-button>
+        <g-button icon='' :is-loading='true'>
+            加载中
         </g-button>
         <hr>
         <g-button theme='primary'>
@@ -212,6 +227,10 @@
             文字按钮
         </g-button>
         <hr>
+        <g-button size='normal'>普通按钮</g-button>
+        <g-button size='small'>小型按钮</g-button>
+        <g-button size='mini'>超小按钮</g-button>
+        <hr>
         <g-icon name='download'></g-icon>
         <g-button-group>
             <g-button icon='left'>
@@ -219,6 +238,14 @@
             </g-button>
             <g-button>更多</g-button>
             <g-button icon='right' icon-position='right'>
+                下一页
+            </g-button>
+        </g-button-group>
+        <g-button-group>
+            <g-button icon='left' theme='primary'>
+                上一页
+            </g-button>
+            <g-button icon='right' icon-position='right' theme='primary'>
                 下一页
             </g-button>
         </g-button-group>

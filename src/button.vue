@@ -1,9 +1,9 @@
 <template>
-   <button class='g-button' :class="{[`icon-${iconPosition}`]:true,[`g-button-${theme}`]:true}" @click="$emit('click')">
+   <button class='g-button' :class="classes">
         <g-icon v-if='icon && !isLoading' :name='icon' class="icon"></g-icon>
         <g-icon v-if='isLoading' name='loading' class="loading icon"></g-icon>
         <div class="g-button-content">
-            <span><slot></slot></span>
+            <slot></slot>
         </div>
    </button>
 </template>
@@ -18,28 +18,36 @@ export default {
           type:String,
           default:'default',
           validator(value){
-           return ['primary','success','wraning','info','danger','text'].indexOf(value)>=0
+           return ['default','primary','success','warning','info','danger','text'].indexOf(value)>=0
           }
         },
-        'icon':{},
-        'iconPosition':{
+        icon:{},
+        iconPosition:{
             type:String,
             default:'left',
             validator(value){
-            //    return !(value!=='left'&& value!=='right')
                return value==='left'|| value==='right'
                 }
             },
-            'isLoading':{
-                type:Boolean,
-                default:false
+        isLoading:{
+            type:Boolean,
+            default:false
             },
+        size:{
+            type:String,
+            default:'normal'
+          },
+        },
+        computed:{
+          classes(){
+            return `icon-${this.iconPosition} g-button-${this.theme} g-button-${this.size}`
+          }
         }
 }
 </script>
 <style lang="scss" scoped>
   $font-size: 14px;
-  $button-height: 36px;
+  $button-height: 40px;
   $button-bg: white;
   $button-active-bg: #eee;
   $border-radius: 4px;
@@ -126,12 +134,29 @@ export default {
     border: 0;
     color: #4a4444;
     &:hover,&:focus{
-      span{
+      .g-button-content{
         color: #8e8282;
         border-color: #222831;
         background-color: #f7e4a4;
       }
     }
   }
+
+  &.g-button-normal{
+    padding: 12px 20px;
+  }
+  &.g-button-small{
+    height: 36px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  &.g-button-mini{
+    height: 32px;
+    padding: 9px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+
 }
 </style>

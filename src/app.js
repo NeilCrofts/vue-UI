@@ -46,15 +46,10 @@ var vm = new Vue({
     el: '#app',
     data: {
         isLoading1: true,
-        isLoading2: false,
-        isLoading3: false,
         message: 'Hello',
         selectedTab: ['2'],
     },
     methods: {
-        yyy() {
-            console.log('yyy');
-        },
         inputChange(e) {
             console.log(e.target);
         },
