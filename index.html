@@ -38,12 +38,12 @@
 
 <body>
     <div id="app" style="padding: 100px;">
-        <g-collapse :selected.sync='selectedTab' single>
+        <!-- <g-collapse :selected.sync='selectedTab' single>
             <g-collapse-item title="标题1" name='1'>内容1</g-collapse-item>
             <g-collapse-item title="标题2" name='2'>内容2</g-collapse-item>
             <g-collapse-item title="标题3" name='3'>内容3</g-collapse-item>
         </g-collapse>
-        {{selectedTab}}
+        {{selectedTab}} -->
         <!-- <div style="padding:10px;overflow:hidden">
             <g-popover position='bottom'>
                 <template slot="content">
@@ -101,31 +101,34 @@
         <!-- <g-tabs :selected.sync='selectedTab'>
             <g-tabs-head>
                 <template slot="actions">
-                    <button>设置</button>
+                    <g-button icon='setting' size = 'mini'>设置</g-button>
                 </template>
-                <g-tabs-item name='basketball'>
-                    篮球
+                <g-tabs-item key='1' name='study'>
+                    学习
                 </g-tabs-item>
-                <g-tabs-item name='football'>
-                    <g-icon name='setting'></g-icon>足球
+                <g-tabs-item name='movie'>
+                    放映厅
                 </g-tabs-item>
-                <g-tabs-item name='volleyball' disabled>
-                    排球
+                <g-tabs-item name='sleep'>
+                    睡大觉
+                </g-tabs-item>
+                <g-tabs-item name='game' disabled>
+                    单机游戏
                 </g-tabs-item>
             </g-tabs-head>
             <g-tabs-body>
-                <g-tabs-pane name='basketball'>
-                    篮球相关资讯
+                <g-tabs-pane name='study'>
+                    学习
                 </g-tabs-pane>
-                <g-tabs-pane name='football'>
-                    足球相关资讯
+                <g-tabs-pane name='movie'>
+                    放映厅
                 </g-tabs-pane>
-                <g-tabs-pane name='volleyball'>
-                    排球相关资讯
+                <g-tabs-pane name='sleep'>
+                    睡大觉
                 </g-tabs-pane>
             </g-tabs-body>
-        </g-tabs>
-        <hr> -->
+        </g-tabs> -->
+
         <!-- <button @click='showToast1'>top</button>
         <button @click='showToast2'>middle</button>
         <button @click='showToast3'>bottom</button>
@@ -177,7 +180,7 @@
             <p>{{message}}</p>
 
         </div> -->
-        <g-button>
+        <!-- <g-button>
             默认按钮
         </g-button>
         <g-button icon='setting'>
@@ -248,7 +251,7 @@
             <g-button icon='right' icon-position='right' theme='primary'>
                 下一页
             </g-button>
-        </g-button-group>
+        </g-button-group> -->
     </div>
 
     <script src="src/app.js"></script>

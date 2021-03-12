@@ -47,7 +47,7 @@ var vm = new Vue({
     data: {
         isLoading1: true,
         message: 'Hello',
-        selectedTab: ['2'],
+        selectedTab: 'movie',
     },
     methods: {
         inputChange(e) {

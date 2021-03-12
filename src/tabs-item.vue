@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" @click='onClick' :class="classes" :data-name="name">
+    <div class="tabs-item" @click='onClick' :class="classes">
          <slot></slot>
     </div>
 </template>
@@ -29,6 +29,7 @@ export default {
     },
      inject:['eventBus'],
     created(){
+        //确定初始选中的标签 字体变色
         if(this.eventBus){
             this.eventBus.$on('update:selected',(name)=>{
             if(name===this.name){
@@ -43,8 +44,8 @@ export default {
     methods: {
       onClick(){
           if(this.disabled){return}
+          //点击标签，向eventBus中心请求切换标签
           this.eventBus && this.eventBus.$emit('update:selected',this.name,this)
-          this.$emit('click', this)
       }
     },
 
@@ -59,9 +60,7 @@ export default {
         height: 100%;
         cursor: pointer;
          &.active{
-            // background-color: sandybrown;
             color:$active-color;
-            font-weight: 700;
         }
         &.disabled{
             color:$disabled-color;

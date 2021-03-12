@@ -18,9 +18,9 @@ export default {
     },
     mounted(){
         this.eventBus.$on('update:selected',(item,vm)=>{
-             //解决初始打开时下划线会移动问题
+             //解决初始打开时下划线会移动问题vm
             this.isShow=true   
-            //确定下划线的位置和宽度
+            //确定下划线的位置和宽度 切换下划线
             let parentLeft = vm.$parent.$el.getBoundingClientRect().left;
             let {width,left} = vm.$el.getBoundingClientRect()
             this.$refs.line.style.width = width+'px'
@@ -40,8 +40,8 @@ export default {
         line-height: $tab-height;
         justify-content: flex-start;
         align-items: center;
-        border-bottom: 1px solid $border-color;
-        >.actions-wrapper{
+        border-bottom: 2.5px solid $border-color;
+        >.actions-wrapper{//添加的按钮样式
             margin-left: auto;
             display: flex;
             justify-content: center;
@@ -50,7 +50,7 @@ export default {
         }
         >.line{
             position: absolute;
-            bottom: 0;
+            bottom: -2.5px;
             border-bottom: 2.5px solid $active-color;
             transition: transform .25s,width .25s;
         }
