@@ -3,6 +3,7 @@ module.exports = {
     title: 'Neil UI',
     description: '一个简便易用的UI框架',
     themeConfig: {
+        logo: '/logo.png',
         nav: [
             { text: '主页', link: '/' },
             { text: '文档', link: '/guide/' },
