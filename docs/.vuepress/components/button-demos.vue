@@ -4,11 +4,11 @@
         <div class="header">基础用法</div>
         <div class="comp_wrapper">
             <div>
-                <g-button>默认按钮</g-button>
-                <g-button icon="setting">默认按钮</g-button>
-                <g-button icon="setting" iconPosition="right">默认按钮</g-button>
-                <g-button :is-loading='true'>加载中</g-button>
-                <g-button disabled>禁用按钮</g-button>
+                <n-button>默认按钮</n-button>
+                <n-button icon="settinn">默认按钮</n-button>
+                <n-button icon="setting" iconPosition="right">默认按钮</n-button>
+                <n-button :is-loading='true'>加载中</n-button>
+                <n-button disabled>禁用按钮</n-button>
             </div>
         </div>
         <div class="clickBtn" @click='isShowOne = !isShowOne'>{{isShowOne?'隐藏代码':'显示代码'}}</div>
@@ -19,12 +19,12 @@
         <div class="header">不同样式</div>
         <div class="comp_wrapper">
             <div>
-                <g-button theme='primary'>主要按钮</g-button>
-                <g-button theme='success'>成功按钮</g-button>
-                <g-button theme='warning'>警告按钮</g-button>
-                <g-button theme='info'>信息按钮</g-button>
-                <g-button theme='danger'>危险按钮</g-button>
-                <g-button theme='text'>文字按钮</g-button>
+                <n-button theme='primary'>主要按钮</n-button>
+                <n-button theme='success'>成功按钮</n-button>
+                <n-button theme='warning'>警告按钮</n-button>
+                <n-button theme='info'>信息按钮</n-button>
+                <n-button theme='danger'>危险按钮</n-button>
+                <n-button theme='text'>文字按钮</n-button>
             </div>
         </div>
         <div class="clickBtn" @click='isShowTwo = !isShowTwo'>{{isShowTwo?'隐藏代码':'显示代码'}}</div>
@@ -35,9 +35,9 @@
         <div class="header">不同尺寸</div>
         <div class="comp_wrapper">
             <div>
-                <g-button size='normal'>默认大小</g-button>
-                <g-button size='small'>中等按钮</g-button>
-                <g-button size='mini'>超小按钮</g-button>
+                <n-button size='normal'>默认大小</n-button>
+                <n-button size='small'>中等按钮</n-button>
+                <n-button size='mini'>超小按钮</n-button>
             </div>
         </div>
         <div class="clickBtn" @click='isShowThree = !isShowThree'>{{isShowThree?'隐藏代码':'显示代码'}}</div>
@@ -51,25 +51,25 @@ import Button from '../../../src/button.vue'
 
 export default {
     components:{
-        'g-button':Button,
+        'n-button':Button,
     },
     data() {
             return {
                 contentOne:`
-                <g-button>默认按钮</g-button>
-                <g-button icon="setting">默认按钮</g-button>
-                <g-button icon="setting" iconPosition="right">默认按钮</g-button>
-                <g-button :is-loading='true'>加载中</g-button>
-                <g-button disabled>禁用按钮</g-button>`.replace(/\t+|  /g,'').trim(),
-                contentTwo:`<g-button theme='primary'>主要按钮</g-button>
-                <g-button theme='success'>成功按钮</g-button>
-                <g-button theme='warning'>警告按钮</g-button>
-                <g-button theme='info'>信息按钮</g-button>
-                <g-button theme='danger'>危险按钮</g-button>
-                <g-button theme='text'>文字按钮</g-button>`.replace(/\t+|  /g,'').trim(),
-                contentThree:`<g-button size='normal'>默认大小</g-button>
-                <g-button size='small'>中等按钮</g-button>
-                <g-button size='mini'>超小按钮</g-button>`.replace(/\t+|  /g,'').trim(),
+                <n-button>默认按钮</n-button>
+                <n-button icon="settinn">默认按钮</n-button>
+                <n-button icon="setting" iconPosition="right">默认按钮</n-button>
+                <n-button :is-loading='true'>加载中</n-button>
+                <n-button disabled>禁用按钮</n-button>`.replace(/\t+|  /g,'').trim(),
+                contentTwo:`<<n-button theme='primary'>主要按钮</n-button>
+                <n-button theme='success'>成功按钮</n-button>
+                <n-button theme='warning'>警告按钮</n-button>
+                <n-button theme='info'>信息按钮</n-button>
+                <n-button theme='danger'>危险按钮</n-button>
+                <n-button theme='text'>文字按钮</n-button>`.replace(/\t+|  /g,'').trim(),
+                contentThree:`<n-button size='normal'>默认大小</n-button>
+                <n-button size='small'>中等按钮</n-button>
+                <n-button size='mini'>超小按钮</n-button>`.replace(/\t+|  /g,'').trim(),
                 isShowOne:false,
                 isShowTwo:false,
                 isShowThree:false

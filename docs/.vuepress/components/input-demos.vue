@@ -4,10 +4,10 @@
             <div class="header">基础用法</div>
             <div class="comp_wrapper">
                 <div>
-                    <g-input value='张三'></g-input>
-                    <g-input value='李四' disabled></g-input>
-                    <g-input value='王五' readonly></g-input>
-                    <g-input value='王' error='姓名不能少于两个字'></g-input>
+                    <n-input value='张三'></n-input>
+                    <n-input value='李四' disabled></n-input>
+                    <n-input value='王五' readonly></n-input>
+                    <n-input value='王' error='姓名不能少于两个字'></n-input>
                 </div>
             </div>
             <div class="clickBtn" @click='isShowOne = !isShowOne'>{{isShowOne?'隐藏代码':'显示代码'}}</div>
@@ -18,7 +18,7 @@
             <div class="header">双向绑定</div>
             <div class="comp_wrapper">
                 <div>
-                    <g-input v-model='message'></g-input>
+                    <n-input v-model='message'></n-input>
                     <p>{{message}}</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@
 import Input from '../../../src/input';
 export default {
     components:{
-        'g-input':Input
+        'n-input':Input
     },
     data(){
         return{
@@ -42,12 +42,12 @@ export default {
             isShowTwo:false,
             message:'',
             contentOne:`
-             <g-input value='张三'></g-input>
-                <g-input value='李四' disabled></g-input>
-                <g-input value='王五' readonly></g-input>
-                <g-input value='王' error='姓名不能少于两个字'></g-input>`.replace(/\t+|  /g,'').trim(),
+             <n-input value='张三'></n-input>
+                <n-input value='李四' disabled></n-input>
+                <n-input value='王五' readonly></n-input>
+                <n-input value='王' error='姓名不能少于两个字'></n-input>`.replace(/\t+|  /g,'').trim(),
             contentTwo:`
-            <g-input v-model='message'></g-input>
+            <n-input v-model='message'></n-input>
             <p>{{message}}</p>`.replace(/\t+|  /g,'').trim()
         }
     },
