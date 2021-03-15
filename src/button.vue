@@ -1,5 +1,5 @@
 <template>
-   <button class='g-button' :class="classes">
+   <button class='g-button' :class="classes" >
         <g-icon v-if='icon && !isLoading' :name='icon' class="icon"></g-icon>
         <g-icon v-if='isLoading' name='loading' class="loading icon"></g-icon>
         <div class="g-button-content">
@@ -41,6 +41,12 @@ export default {
         computed:{
           classes(){
             return `icon-${this.iconPosition} g-button-${this.theme} g-button-${this.size}`
+          }
+        },
+        methods:{
+          handleClick(e){
+            this.$emit('')
+            console.log(e.target);
           }
         }
 }

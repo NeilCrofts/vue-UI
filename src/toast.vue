@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" :class="toastClasses">
+    <div class="toastWrapper" :class="toastClasses">
         <div class="toast" ref="toast" >
             <slot v-if="!enableHtml"></slot>
             <div v-else class="message" v-html="$slots.default[0]"></div>
@@ -78,7 +78,7 @@ export default {
     }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     $font-size: 14px;
     $min-toast-height: 40px;
     $toast-bg: rgba(10,170,204,0.8);
@@ -95,7 +95,7 @@ export default {
         100%{opacity: 1;}
     }
     $animation-duration:300ms;
-    .wrapper{
+    .toastWrapper{
             position: fixed; 
             left: 50%; 
             transform: translateX(-50%);
