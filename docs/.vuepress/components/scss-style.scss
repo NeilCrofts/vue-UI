@@ -36,9 +36,9 @@ body {
         padding: 8px 16px;
         border-bottom: 1px solid #ebebeb;
     }
-    .btn_wrapper {
+    .comp_wrapper {
         padding: 16px;
-        .g-button {
+        &>div>* {
             margin: 8px;
         }
     }

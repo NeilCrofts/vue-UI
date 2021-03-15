@@ -2,7 +2,7 @@
 <div>
     <div class="wrapper">
         <div class="header">基础用法</div>
-        <div class="btn_wrapper">
+        <div class="comp_wrapper">
             <div>
                 <g-button>默认按钮</g-button>
                 <g-button icon="setting">默认按钮</g-button>
@@ -17,7 +17,7 @@
     </div>
     <div class="wrapper">
         <div class="header">不同样式</div>
-        <div class="btn_wrapper">
+        <div class="comp_wrapper">
             <div>
                 <g-button theme='primary'>主要按钮</g-button>
                 <g-button theme='success'>成功按钮</g-button>
@@ -33,7 +33,7 @@
     </div>
     <div class="wrapper">
         <div class="header">不同尺寸</div>
-        <div class="btn_wrapper">
+        <div class="comp_wrapper">
             <div>
                 <g-button size='normal'>默认大小</g-button>
                 <g-button size='small'>中等按钮</g-button>
@@ -76,18 +76,8 @@ export default {
             }
         },
         methods:{
-            handleClick(){
-            }
         },
-        computed:{
-             toggleMsg(){
-                 if(!this.isShowOne){
-                     return '显示代码'
-                 }else{
-                     return '隐藏代码'
-                 }
-             }
-        }
+        
 }
 </script>
 <style lang="scss">
