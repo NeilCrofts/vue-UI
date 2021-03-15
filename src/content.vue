@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="contentWrapper">
     <slot></slot>
   </div>
 </template>
@@ -9,7 +9,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    .content{
+    .contentWrapper{
         flex-grow: 1;
     }
 </style> 

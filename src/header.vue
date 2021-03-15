@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="headerWrapper">
     <slot></slot>
   </div>
 </template>
@@ -9,6 +9,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .header {
+  .headerWrapper {
   }
 </style> 

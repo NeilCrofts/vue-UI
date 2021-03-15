@@ -22,12 +22,11 @@ export default {
     }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     .layout{
         display: flex;
-         flex-grow: 1;
+        flex-grow: 1;
         flex-direction: column;
-        border: 2px green solid;
     }
     .hasSider{
         flex-direction:row;
