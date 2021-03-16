@@ -74,7 +74,7 @@ export default {
                     position,
                 })
             }
-        },`.replace(/\t+|                 /g,'').trim(),
+        },`.replace(/\t+|                /g,'').trim(),
                 contentThree:`
                 <n-button @click.native="onClickButtonTwo('top')">上方弹出</n-button>
                 <n-button @click.native="onClickButtonTwo('middle')">中间弹出</n-button>

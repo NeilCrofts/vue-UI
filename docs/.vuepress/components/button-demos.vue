@@ -5,9 +5,17 @@
         <div class="comp_wrapper">
             <div>
                 <n-button>默认按钮</n-button>
-                <n-button icon="settinn">默认按钮</n-button>
-                <n-button icon="setting" iconPosition="right">默认按钮</n-button>
+                <n-button icon="setting">设置</n-button>
+                <n-button icon="setting" iconPosition="right">设置</n-button>
                 <n-button :is-loading='true'>加载中</n-button>
+                <n-button icon='click'>点击</n-button>
+                <n-button icon='thumbs-up'>点赞</n-button>
+                <n-button icon='open'>打开</n-button>
+                <n-button icon='add'>添加</n-button>
+                <n-button icon='remove'>删除</n-button>
+                <n-button icon='download'>下载</n-button>
+                <n-button icon='upload'>上传</n-button>
+                <n-button icon='info'>通知</n-button>
                 <n-button disabled>禁用按钮</n-button>
             </div>
         </div>
@@ -44,24 +52,52 @@
         <div class="line" v-if="isShowThree"></div>
         <pre id="pre_action" v-if="isShowThree"><code class="code">{{contentThree}}</code></pre>
     </div>
+    <div class="wrapper">
+        <div class="header">支持结合</div>
+        <div class="comp_wrapper">
+            <div>
+                <n-button-group>
+                    <n-button icon='left'>
+                        上一页
+                    </n-button>
+                    <n-button>更多</n-button>
+                    <n-button icon='right' icon-position='right'>
+                        下一页
+                    </n-button>
+                </n-button-group>
+            </div>
+        </div>
+        <div class="clickBtn" @click='isShowFour = !isShowFour'>{{isShowFour?'隐藏代码':'显示代码'}}</div>
+        <div class="line" v-if="isShowFour"></div>
+        <pre id="pre_action" v-if="isShowFour"><code class="code">{{contentFour}}</code></pre>
+    </div>
 </div>
 </template>
 <script>
 import Button from '../../../src/button.vue'
-
+import ButtonGroup from '../../../src/button-group.vue'
 export default {
     components:{
         'n-button':Button,
+        'n-button-group':ButtonGroup,
     },
     data() {
             return {
                 contentOne:`
                 <n-button>默认按钮</n-button>
-                <n-button icon="settinn">默认按钮</n-button>
-                <n-button icon="setting" iconPosition="right">默认按钮</n-button>
+                <n-button icon="setting">设置</n-button>
+                <n-button icon="setting" iconPosition="right">设置</n-button>
                 <n-button :is-loading='true'>加载中</n-button>
+                <n-button icon='click'>点击</n-button>
+                <n-button icon='thumbs-up'>点赞</n-button>
+                <n-button icon='open'>打开</n-button>
+                <n-button icon='add'>添加</n-button>
+                <n-button icon='remove'>删除</n-button>
+                <n-button icon='download'>下载</n-button>
+                <n-button icon='upload'>上传</n-button>
+                <n-button icon='info'>通知</n-button>
                 <n-button disabled>禁用按钮</n-button>`.replace(/\t+|  /g,'').trim(),
-                contentTwo:`<<n-button theme='primary'>主要按钮</n-button>
+                contentTwo:`<n-button theme='primary'>主要按钮</n-button>
                 <n-button theme='success'>成功按钮</n-button>
                 <n-button theme='warning'>警告按钮</n-button>
                 <n-button theme='info'>信息按钮</n-button>
@@ -70,9 +106,20 @@ export default {
                 contentThree:`<n-button size='normal'>默认大小</n-button>
                 <n-button size='small'>中等按钮</n-button>
                 <n-button size='mini'>超小按钮</n-button>`.replace(/\t+|  /g,'').trim(),
+                contentFour:`
+                <n-button-group>
+                    <n-button icon='left'>
+                        上一页
+                    </n-button>
+                    <n-button>更多</n-button>
+                    <n-button icon='right' icon-position='right'>
+                        下一页
+                    </n-button>
+                </n-button-group>`.replace(/\t+|                /g,'').trim(),
                 isShowOne:false,
                 isShowTwo:false,
-                isShowThree:false
+                isShowThree:false,
+                isShowFour:false
             }
         },
         methods:{

@@ -22,7 +22,7 @@
         <pre id="pre_action" v-if="isShowOne"><code class="code">{{contentOne}}</code></pre>
     </div>
     <div class="wrapper">
-        <div class="header">不同样式</div>
+        <div class="header">布局</div>
         <div class="comp_wrapper">
             <div>
                <n-layout style="color: white; margin-bottom:50px;">
@@ -46,7 +46,7 @@
         <pre id="pre_action" v-if="isShowTwo"><code class="code">{{contentTwo}}</code></pre>
     </div>
     <div class="wrapper">
-        <div class="header">不同尺寸</div>
+        <div class="header">布局</div>
         <div class="comp_wrapper">
             <div>
                 <n-layout style="color: white; overflow:hidden; margin-bottom:50px;">
