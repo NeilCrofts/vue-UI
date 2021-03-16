@@ -3,4 +3,6 @@ title: Layout
 ---
 # 布局
 
-<layout-demos></layout-demos>
+<ClientOnly>
+    <layout-demos></layout-demos>
+</ClientOnly>    

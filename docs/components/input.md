@@ -3,4 +3,6 @@ title: Input
 ---
 # 输入框
 
-<input-demos></input-demos>
+<ClientOnly>
+    <input-demos></input-demos>
+</ClientOnly>    

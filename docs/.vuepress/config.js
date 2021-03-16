@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/vue-UI/',
+    // base: '/vue-UI/',
     title: 'Neil UI',
     description: '一个简便易用的UI框架',
     themeConfig: {

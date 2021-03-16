@@ -3,4 +3,6 @@ title: Grid
 ---
 # 网格
 
-<grid-demos></grid-demos>
+<ClientOnly>
+    <grid-demos></grid-demos>
+</ClientOnly>
