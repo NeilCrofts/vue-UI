@@ -23,6 +23,7 @@ import CollapseItem from './components/collapse-item'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import router from './router.js'
+import App from "./App.vue";
 Vue.component('g-button', Button)
 Vue.component('g-icon', icon)
 Vue.component('g-button-group', ButtonGroup)
@@ -46,9 +47,9 @@ Vue.component('g-collapse', Collapse)
 Vue.component('g-collapse-item', CollapseItem)
 
 
-var vm = new Vue({
+new Vue({
     router,
-    el: '#app',
+    render: h => h(App),
     data: {
         isLoading1: true,
         message: 'Hello',
@@ -80,10 +81,10 @@ var vm = new Vue({
         }
     },
     created() {}
-});
+}).$mount("#app");
 
 
-import chai from 'chai';
-import spies from 'chai-spies'
-chai.use(spies)
-    // const expect = chai.expect;
+// import chai from 'chai';
+// import spies from 'chai-spies'
+// chai.use(spies)
+// const expect = chai.expect;

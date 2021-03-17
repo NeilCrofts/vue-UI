@@ -1,5 +1,5 @@
 <template>
-  <article class="article-wrapper markdown-body" v-html="content">
+  <article class="article-wrapper markdown-body">
       intoduce页面
   </article>
 </template>
