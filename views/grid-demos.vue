@@ -283,7 +283,7 @@ export default {
                     <n-col span='2'>
                         <div class="colDemo">2</div>
                     </n-col>
-                </n-row>`.replace(/\t+| {8}/g,'').trim(),
+                </n-row>`.replace(/\t+| {16}/g,'').trim(),
                 contentTwo:`
                 * {
                     box-sizing: border-box;
@@ -313,7 +313,7 @@ export default {
                     <n-col span='6'>
                         <div class="colDemo">6</div>
                     </n-col>
-                </n-row>`.replace(/\t+| {8}/g,'').trim(),
+                </n-row>`.replace(/\t+| {16}/g,'').trim(),
                 contentThree:`
                 * {
                     box-sizing: border-box;
@@ -345,7 +345,7 @@ export default {
                     <n-col span="4" offset="4">
                         <div class="colDemo">4</div>
                     </n-col>
-                </n-row>`.replace(/\t+| {8}/g,'').trim(),
+                </n-row>`.replace(/\t+| {16}/g,'').trim(),
                 contentFour:`
                 * {
                     box-sizing: border-box;
@@ -358,7 +358,7 @@ export default {
                     <n-col span="24" :ipad="{span:16}" :narrow-pc="{span:20}" :pc="{span:22}" :wide-pc="{span:23}">
                         <div class="colDemo">比例随着屏幕宽度的减小发生变化</div>
                     </n-col>
-                </n-row>`.replace(/\t+| {8}/g,'').trim(),
+                </n-row>`.replace(/\t+| {16}/g,'').trim(),
                 isShowOne:false,
                 isShowTwo:false,
                 isShowThree:false,

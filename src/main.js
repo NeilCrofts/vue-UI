@@ -25,7 +25,7 @@ Vue.use(VueRouter)
 import router from './router.js'
 import App from "./App.vue";
 import './assets/scss/index.scss'
-
+import 'github-markdown-css'
 
 
 Vue.component('g-button', Button)

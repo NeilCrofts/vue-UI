@@ -34,5 +34,8 @@ const routes = [
 
 
 export default new VueRouter({
-    routes
+    routes,
+    scrollBehavior() { //to top
+        return { x: 0, y: 0 }
+    }
 })

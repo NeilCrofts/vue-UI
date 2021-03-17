@@ -9,5 +9,6 @@
 </template>
 
 <style lang="scss">
-
+  #app{
+  }
 </style>

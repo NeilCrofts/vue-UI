@@ -5,10 +5,10 @@
             <n-icon name='logo'></n-icon>
         </div>
         <ul class="menu-right-link">
-            <li><a target="_blank" href="https://gitee.com/xiuxiuyifan/z-vue3-ui">码云</a></li>
-            <li><a target="_blank" href="https://github.com/xiuxiuyifan/z-vue3-ui">github</a></li>
+            <li><a target="_blank" href="https://gitee.com/NeilCrofts/">码云</a></li>
+            <li><a target="_blank" href="https://github.com/NeilCrofts">github</a></li>
             <li>
-                <!-- <router-link to="/doc/tab">文档</router-link> -->
+                <router-link to="/introduce">文档</router-link>
             </li>
         </ul>
     </div>

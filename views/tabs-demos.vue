@@ -60,7 +60,7 @@ export default {
                     return{
                         selectedTab:'movie'
                     }
-                }`.replace(/\t+| {8}/g,'').trim(),
+                }`.replace(/\t+| {16}/g,'').trim(),
                 isShowOne:false,
                 selectedTab:'movie'
             }

@@ -1,33 +1,30 @@
 <template lang="">
-    <div>
-        dsfasddfas
-        <pre id='pre_action'>
-            <code class='code'>
-                {{startScript}}
-            </code>
+    <article class='markdown-body'>
+        <h1>安装</h1>
+        <p>打开终端运行下列命令</p>
+        <pre class='pre_action'><code class='code'>npm install neil-vue-ui</code>
         </pre>
-    </div>
+        <p>或</p>
+        <pre class='pre_action'><code class='code'>yarn add neil-vue-ui</code>
+        </pre>
+        
+        <footer>
+            <p>上一节：<a href='#/introduce'>介绍</a></p>
+            <p>下一节：<a href='#/use'>使用</a></p>
+        </footer>
+    </article>
 </template>
 <script>
 export default {
     data(){
         return{
-            startScript:`
-                import {Button} from 'Neil-vue-ui'
-                import Vue from 'vue'
 
-                new Vue({
-                el: '#app',
-                components: {
-                    'g-button':Button
-                    }
-                })`.replace(/\t+| {8}/g,'').trim(),
         }
     }
 }
 </script>
 <style lang="scss" scoped>
-    #pre_action {
+    .pre_action {
         border-radius: 5px;
         padding: 8px;
         margin: 0;
@@ -37,5 +34,10 @@ export default {
             color: #000;
             font-size: 15px;
         }
+    }
+    footer{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
     }
 </style>
