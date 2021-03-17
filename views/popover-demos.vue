@@ -71,10 +71,10 @@
 </div>
 </template>
 <script>
-import Popover from '../../../src/popover'
-import Collapse from '../../../src/collapse'
-import CollapseItem from '../../../src/collapse-item'
-import Button from '../../../src/button'
+import Popover from '../src/components/popover'
+import Collapse from '../src/components/collapse'
+import CollapseItem from '../src/components/collapse-item'
+import Button from '../src/components/button'
 
 export default {
     components:{

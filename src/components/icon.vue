@@ -4,7 +4,7 @@
         </svg> 
 </template>
 <script>
-import './svg'
+import '../svg.js'
 export default {
     props:['name']
 }

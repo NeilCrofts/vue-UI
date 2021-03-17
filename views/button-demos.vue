@@ -53,7 +53,7 @@
         <pre id="pre_action" v-if="isShowThree"><code class="code">{{contentThree}}</code></pre>
     </div>
     <div class="wrapper">
-        <div class="header">支持结合</div>
+        <div class="header">连续的按钮</div>
         <div class="comp_wrapper">
             <div>
                 <n-button-group>
@@ -74,8 +74,8 @@
 </div>
 </template>
 <script>
-import Button from '../../../src/button.vue'
-import ButtonGroup from '../../../src/button-group.vue'
+import Button from '../src/components/button'
+import ButtonGroup from '../src/components/button-group.vue'
 export default {
     components:{
         'n-button':Button,

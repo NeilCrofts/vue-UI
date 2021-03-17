@@ -1,25 +1,28 @@
 import Vue from 'vue'
-import Button from './button'
-import icon from './icon'
-import ButtonGroup from './button-group'
-import Input from './input'
-import Row from './row'
-import Col from './col'
-import Layout from './layout'
-import Header from './header'
-import Sider from './sider'
-import Content from './content'
-import Footer from './footer'
-import Toast from './toast'
+import Button from './components/button'
+import icon from './components/icon'
+import ButtonGroup from './components/button-group'
+import Input from './components/input'
+import Row from './components/row'
+import Col from './components/col'
+import Layout from './components/layout'
+import Header from './components/header'
+import Sider from './components/sider'
+import Content from './components/content'
+import Footer from './components/footer'
+import Toast from './components/toast'
 import plugin from './plugin'
-import Tabs from './tabs'
-import TabsHead from './tabs-head'
-import TabsBody from './tabs-body'
-import TabsItem from './tabs-item'
-import TabsPane from './tabs-pane'
-import Popover from './popover'
-import Collapse from './collapse'
-import CollapseItem from './collapse-item'
+import Tabs from './components/tabs'
+import TabsHead from './components/tabs-head'
+import TabsBody from './components/tabs-body'
+import TabsItem from './components/tabs-item'
+import TabsPane from './components/tabs-pane'
+import Popover from './components/popover'
+import Collapse from './components/collapse'
+import CollapseItem from './components/collapse-item'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+import router from './router.js'
 Vue.component('g-button', Button)
 Vue.component('g-icon', icon)
 Vue.component('g-button-group', ButtonGroup)
@@ -42,7 +45,9 @@ Vue.component('g-popover', Popover)
 Vue.component('g-collapse', Collapse)
 Vue.component('g-collapse-item', CollapseItem)
 
+
 var vm = new Vue({
+    router,
     el: '#app',
     data: {
         isLoading1: true,
@@ -50,9 +55,6 @@ var vm = new Vue({
         selectedTab: 'movie',
     },
     methods: {
-        inputChange(e) {
-            console.log(e.target);
-        },
         showToast1() {
             this.showToast('top')
         },

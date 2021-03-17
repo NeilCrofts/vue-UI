@@ -31,7 +31,7 @@
     </div>
 </template>
 <script>
-import Input from '../../../src/input';
+import Input from '../src/components/input';
 export default {
     components:{
         'n-input':Input

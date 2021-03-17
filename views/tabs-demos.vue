@@ -26,11 +26,11 @@
 </div>
 </template>
 <script>
-import Tabs from '../../../src/tabs.vue'
-import TabsHead from '../../../src/tabs-head.vue'
-import TabsBody from '../../../src/tabs-body'
-import TabsItem from '../../../src/tabs-item'
-import TabsPane from '../../../src/tabs-pane'
+import Tabs from '../src/components/tabs.vue'
+import TabsHead from '../src/components/tabs-head.vue'
+import TabsBody from '../src/components/tabs-body'
+import TabsItem from '../src/components/tabs-item'
+import TabsPane from '../src/components/tabs-pane'
 export default {
     components:{
         'n-tabs':Tabs,

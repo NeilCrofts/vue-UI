@@ -42,8 +42,8 @@
 </div>
 </template>
 <script>
-import Button from '../../../src/button.vue'
-import Nplugin from '../../../src/plugin.js'
+import Button from '../src/components/button.vue'
+import Nplugin from '../src/plugin.js'
 import Vue from 'vue'
 Vue.use(Nplugin)
 export default {

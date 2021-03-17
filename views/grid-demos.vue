@@ -186,8 +186,8 @@
 </div>
 </template>
 <script>
-import Col from '../../../src/col.vue'
-import Row from '../../../src/row.vue'
+import Col from '../src/components/col.vue'
+import Row from '../src/components/row.vue'
 
 export default {
     components:{
