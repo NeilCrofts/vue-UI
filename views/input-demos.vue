@@ -42,13 +42,13 @@ export default {
             isShowTwo:false,
             message:'',
             contentOne:`
-             <n-input value='张三'></n-input>
+                <n-input value='张三'></n-input>
                 <n-input value='李四' disabled></n-input>
                 <n-input value='王五' readonly></n-input>
-                <n-input value='王' error='姓名不能少于两个字'></n-input>`.replace(/\t+|  /g,'').trim(),
+                <n-input value='王' error='姓名不能少于两个字'></n-input>`.replace(/\t+| {8}/g,'').trim(),
             contentTwo:`
             <n-input v-model='message'></n-input>
-            <p>{{message}}</p>`.replace(/\t+|  /g,'').trim()
+            <p>{{message}}</p>`.replace(/\t+| {6}/g,'').trim()
         }
     },
     methods:{

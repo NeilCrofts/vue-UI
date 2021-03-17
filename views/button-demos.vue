@@ -96,16 +96,16 @@ export default {
                 <n-button icon='download'>下载</n-button>
                 <n-button icon='upload'>上传</n-button>
                 <n-button icon='info'>通知</n-button>
-                <n-button disabled>禁用按钮</n-button>`.replace(/\t+|  /g,'').trim(),
+                <n-button disabled>禁用按钮</n-button>`.replace(/\t+| {8}/g,'').trim(),
                 contentTwo:`<n-button theme='primary'>主要按钮</n-button>
                 <n-button theme='success'>成功按钮</n-button>
                 <n-button theme='warning'>警告按钮</n-button>
                 <n-button theme='info'>信息按钮</n-button>
                 <n-button theme='danger'>危险按钮</n-button>
-                <n-button theme='text'>文字按钮</n-button>`.replace(/\t+|  /g,'').trim(),
+                <n-button theme='text'>文字按钮</n-button>`.replace(/\t+| {8}/g,'').trim(),
                 contentThree:`<n-button size='normal'>默认大小</n-button>
                 <n-button size='small'>中等按钮</n-button>
-                <n-button size='mini'>超小按钮</n-button>`.replace(/\t+|  /g,'').trim(),
+                <n-button size='mini'>超小按钮</n-button>`.replace(/\t+| {8}/g,'').trim(),
                 contentFour:`
                 <n-button-group>
                     <n-button icon='left'>
@@ -115,7 +115,7 @@ export default {
                     <n-button icon='right' icon-position='right'>
                         下一页
                     </n-button>
-                </n-button-group>`.replace(/\t+|                /g,'').trim(),
+                </n-button-group>`.replace(/\t+| {10}/g,'').trim(),
                 isShowOne:false,
                 isShowTwo:false,
                 isShowThree:false,

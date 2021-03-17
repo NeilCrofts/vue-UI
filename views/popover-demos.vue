@@ -72,16 +72,12 @@
 </template>
 <script>
 import Popover from '../src/components/popover'
-import Collapse from '../src/components/collapse'
-import CollapseItem from '../src/components/collapse-item'
 import Button from '../src/components/button'
 
 export default {
     components:{
         'n-popover':Popover,
         'n-button':Button,
-        'n-collapse':Collapse,
-        'n-collapseItem':CollapseItem
     },
     data() {
             return {
@@ -109,7 +105,7 @@ export default {
                     <template slot="content">
                         弹出内容
                     </template>
-                </n-popover>`.replace(/\t+|                /g,'').trim(),
+                </n-popover>`.replace(/\t+| {8}/g,'').trim(),
                 contentTwo:`
                 <n-popover trigger='hover'>
                     <n-button>上方弹出</n-button>
@@ -134,7 +130,7 @@ export default {
                     <template slot="content">
                         弹出内容
                     </template>
-                </n-popover>`.replace(/\t+|                /g,'').trim(),
+                </n-popover>`.replace(/\t+| {8}/g,'').trim(),
                 isShowOne:false,
                 isShowTwo:false,
             }

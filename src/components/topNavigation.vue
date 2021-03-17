@@ -1,0 +1,113 @@
+<template>
+<div>
+    <div class="top-nav">
+        <div class="icon">
+            <n-icon name='logo'></n-icon>
+        </div>
+        <ul class="menu-right-link">
+            <li><a target="_blank" href="https://gitee.com/xiuxiuyifan/z-vue3-ui">码云</a></li>
+            <li><a target="_blank" href="https://github.com/xiuxiuyifan/z-vue3-ui">github</a></li>
+            <li>
+                <!-- <router-link to="/doc/tab">文档</router-link> -->
+            </li>
+        </ul>
+    </div>
+    <div class="mobel-nav">
+    </div>
+</div>
+</template>
+
+<script>
+import Icon from './icon.vue'
+export default {
+  components:{
+      'n-icon':Icon
+  },
+  name:'top-nav',
+  data(){
+    return{}
+  },
+  mounted() {
+  },
+  methods: {
+    
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 10px 60px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  font-size: 16px;
+  background: #fff;
+
+  .icon {
+    float: left;
+
+    > svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .menu-right-link {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+
+    > li {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 50px;
+
+      > a {
+        color: #0A8AC2;
+      }
+    }
+  }
+}
+.mobel-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  z-index: 20;
+  display: none;
+  box-shadow: 0 0 2px rgba(0,0,0,0.25);
+  .menu{
+    color: #8f8f8f;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    left: 12px;
+  }
+  .vue{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@media (max-width: 900px){
+  .top-nav{
+    display: none;
+  }
+  .mobel-nav{
+    display: block;
+  }
+}
+</style>

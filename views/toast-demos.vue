@@ -55,7 +55,7 @@ export default {
                 contentOne:`
                 <n-button @click.native="$toast('弹出提示')">上方弹出</n-button>
                 <n-button @click.native="$toast('弹出提示', {position:'middle'})">中间弹出</n-button>
-                <n-button @click.native="$toast('弹出提示', {position:'bottom'})">下方弹出</n-button>`.replace(/\t+|  /g,'').trim(),
+                <n-button @click.native="$toast('弹出提示', {position:'bottom'})">下方弹出</n-button>`.replace(/\t+| {8}/g,'').trim(),
                 contentTwo:`
                 <n-button @click.native="onClickButton('top')">上方弹出</n-button>
                 <n-button @click.native="onClickButton('middle')">中间弹出</n-button>
@@ -72,9 +72,9 @@ export default {
                     },
                     autoClose: 3,   //设置自动关闭时间，单位s
                     position,
-                })
-            }
-        },`.replace(/\t+|                /g,'').trim(),
+                        })
+                    }
+                }`.replace(/\t+|  {8}/g,'').trim(),
                 contentThree:`
                 <n-button @click.native="onClickButtonTwo('top')">上方弹出</n-button>
                 <n-button @click.native="onClickButtonTwo('middle')">中间弹出</n-button>

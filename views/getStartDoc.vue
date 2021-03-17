@@ -1,8 +1,9 @@
 <template lang="">
     <div>
+        dsfasddfas
         <pre id='pre_action'>
             <code class='code'>
-{{startScript}}
+                {{startScript}}
             </code>
         </pre>
     </div>
@@ -20,7 +21,7 @@ export default {
                 components: {
                     'g-button':Button
                     }
-                })`.replace(/\t+|                /g,'').trim(),
+                })`.replace(/\t+| {8}/g,'').trim(),
         }
     }
 }

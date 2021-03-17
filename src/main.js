@@ -24,6 +24,10 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import router from './router.js'
 import App from "./App.vue";
+import './assets/scss/index.scss'
+
+
+
 Vue.component('g-button', Button)
 Vue.component('g-icon', icon)
 Vue.component('g-button-group', ButtonGroup)

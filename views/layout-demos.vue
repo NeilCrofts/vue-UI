@@ -100,7 +100,7 @@ export default {
                     <n-footer style="height: 50px; background:#0AAACC;">
                         footer
                     </n-footer>
-                </n-layout>`.replace(/\t+|                /g,'').trim(),
+                </n-layout>`.replace(/\t+| {8}/g,'').trim(),
                 contentTwo:`
                 <n-layout style="color: white; margin-bottom:50px;">
                     <n-header style="height:50px; background:#0AAACC;">
@@ -115,7 +115,7 @@ export default {
                     <n-footer style="height: 50px; background:#0AAACC;">
                         footer
                     </n-footer>
-                </n-layout>`.replace(/\t+|                /g,'').trim(),
+                </n-layout>`.replace(/\t+| {8}/g,'').trim(),
                 contentThree:`
                 <n-layout style="color: white; overflow:hidden; margin-bottom:50px;">
                     <n-sider style=" background:#00ACB5; width:200px; color: black;">
@@ -132,7 +132,7 @@ export default {
                             footer
                         </n-footer>
                     </n-layout>
-                </n-layout>`.replace(/\t+|                /g,'').trim(),
+                </n-layout>`.replace(/\t+| {8}/g,'').trim(),
                 isShowOne:false,
                 isShowTwo:false,
                 isShowThree:false
