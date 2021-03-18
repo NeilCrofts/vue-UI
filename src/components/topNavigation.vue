@@ -15,6 +15,10 @@
         </ul>
     </div>
     <div class="mobel-nav">
+      <div @click="toggleMenu">
+        <n-icon name="menu" class="menu" ></n-icon>
+      </div>
+      <n-icon name="logo" class="vue"></n-icon>
     </div>
 </div>
 </template>
@@ -27,12 +31,17 @@ export default {
   },
   name:'top-nav',
   data(){
-    return{}
+    return{
+      isOpen:false
+    }
   },
   mounted() {
   },
   methods: {
-    
+    toggleMenu(){
+      this.isOpen= !this.isOpen
+      this.$emit('handleOpen',this.isOpen)
+    }
   }
 }
 </script>
@@ -87,12 +96,21 @@ export default {
   display: none;
   box-shadow: 0 0 2px rgba(0,0,0,0.25);
   .menu{
-    color: #8f8f8f;
+    color: #05d0df;
+    cursor: pointer;
     position: absolute;
     width: 24px;
     height: 24px;
     top: 8px;
     left: 12px;
+  }
+  .vue{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 }
 

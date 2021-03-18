@@ -1,8 +1,9 @@
 {
-    "name": "neil-test-1",
+    "name": "neil-vue-ui",
     "version": "0.1.0",
-    "private": true,
+    "private": false,
     "description": "这是一个UI框架",
+    "main": "index.js",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
@@ -49,17 +50,15 @@
             "parser": "babel-eslint"
         },
         "rules": {},
-        "overrides": [
-            {
-                "files": [
-                    "**/__tests__/*.{j,t}s?(x)",
-                    "**/tests/unit/**/*.spec.{j,t}s?(x)"
-                ],
-                "env": {
-                    "mocha": true
-                }
+        "overrides": [{
+            "files": [
+                "**/__tests__/*.{j,t}s?(x)",
+                "**/tests/unit/**/*.spec.{j,t}s?(x)"
+            ],
+            "env": {
+                "mocha": true
             }
-        ]
+        }]
     },
     "browserslist": [
         "> 1%",

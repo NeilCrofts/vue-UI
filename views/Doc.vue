@@ -1,7 +1,7 @@
 <template>
   <div class="doc">
-    <top-nav></top-nav>
-    <div class="menu-wrapper">
+    <top-nav v-on:handleOpen="onClickOpen"></top-nav>
+    <div class="menu-wrapper" :class="{'open':openTF}">
       <div class="menu">
         <h2>文档</h2>
         <ul class="ul">
@@ -55,9 +55,17 @@ import TopNav from '../src/components/topNavigation';
 export default {
   name:'view-doc',
   components: {TopNav},
+  data(){
+    return{
+      openTF:false
+    }
+  },
   mounted() {
   },
   methods: {
+    onClickOpen(isOpen){
+      this.openTF = isOpen
+      }
     }
   }
 </script>
