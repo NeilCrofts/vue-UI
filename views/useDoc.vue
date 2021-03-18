@@ -17,7 +17,7 @@ components: {
 })</code>
       </pre>
 
-      <footer>
+      <footer class="page-nav">
             <p>上一节：<a href='#/getStart'>快速上手</a></p>
             <p>下一节：<a href='#/button'>button组件</a></p>
         </footer>
@@ -34,10 +34,18 @@ export default {
 <style lang="scss" scoped>
 .article-wrapper {
   padding: 40px 0;
-  footer{
+  p>a{
+    color: #0AAACC;
+    text-decoration: none;
+  }
+  .page-nav{
         display: flex;
         justify-content: space-between;
         margin: 20px;
+        p>a{
+          color:#0AAACC;
+          text-decoration: none;
+        }
     }
 }
 </style>

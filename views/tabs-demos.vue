@@ -23,6 +23,10 @@
         <div class="line" v-if="isShowOne"></div>
         <pre id="pre_action" v-if="isShowOne"><code class="code">{{contentOne}}</code></pre>
     </div>
+    <footer class="page-nav">
+            <p>上一节：<a href='#/button'>button组件</a></p>
+            <p>下一节：<a href='#/input'>input组件</a></p>
+    </footer>
 </div>
 </template>
 <script>

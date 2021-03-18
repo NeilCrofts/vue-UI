@@ -2,7 +2,9 @@
 <div>
     <div class="top-nav">
         <div class="icon">
+          <a href="#/introduce">
             <n-icon name='logo'></n-icon>
+          </a>
         </div>
         <ul class="menu-right-link">
             <li><a target="_blank" href="https://gitee.com/NeilCrofts/">码云</a></li>
@@ -51,7 +53,7 @@ export default {
   .icon {
     float: left;
 
-    > svg {
+    > a>svg {
       width: 40px;
       height: 40px;
     }
@@ -91,14 +93,6 @@ export default {
     height: 24px;
     top: 8px;
     left: 12px;
-  }
-  .vue{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
   }
 }
 

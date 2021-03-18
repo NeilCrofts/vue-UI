@@ -26,8 +26,10 @@
             <div class="line" v-if="isShowTwo"></div>
             <pre id="pre_action" v-if="isShowTwo"><code class="code">{{contentTwo}}</code></pre>
         </div>
-
-        
+        <footer class="page-nav">
+            <p>上一节：<a href='#/tabs'>tabs组件</a></p>
+            <p>下一节：<a href='#/layout'>layout组件</a></p>
+        </footer>
     </div>
 </template>
 <script>

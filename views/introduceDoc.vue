@@ -6,10 +6,8 @@
       <h2>设计缘由</h2>
       <p>是我为了深入学习Vue而写的一个项目，目前因为完成该项目熟悉掌握了Vue的语法特性，Vue组件间通信等，项目还会继续开发其他组件，将继续深入理解更多Vue的知识</p>
       <h2>本网站</h2>
-      <p>本网站采用vue-cli搭建，主要样式是由自己实现的</p>
-      <footer>
-        <p>下一节：<a href='#/getStart'>快速上手</a></p>
-      </footer>
+      <p>本网站采用vue-cli搭建，样式是由自己实现的</p>
+      <p class="page-nav">下一节：<a href='#/getStart'>快速上手</a></p>
   </article>
 </template>
 
@@ -23,10 +21,14 @@ export default {
 .article-wrapper {
   padding: 40px 0;
   position: relative;
-  footer{
+  .page-nav{
         position: absolute;
         right: 0;
         margin: 20px;
+        a{
+          color:#0AAACC;
+          text-decoration: none;
+        }
     }
 }
 </style>

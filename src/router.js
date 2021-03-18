@@ -7,13 +7,14 @@ import Use from '../views/useDoc.vue'
 import Button from '../views/button-demos.vue'
 import Grid from '../views/grid-demos.vue'
 import Input from '../views/input-demos.vue'
-import Layout from '../views/layout-demos.vue'
-import Popover from '../views/popover-demos.vue'
 import Tabs from '../views/tabs-demos.vue'
+import Layout from '../views/layout-demos.vue'
 import Toast from '../views/toast-demos.vue'
+import Popover from '../views/popover-demos.vue'
+import Other from '../views/other-demos.vue'
 
 const routes = [
-    { path: '/', component: Doc },
+    { path: '/', component: Doc, redirect: '/introduce', },
     {
         path: '/doc',
         component: Doc,
@@ -28,6 +29,7 @@ const routes = [
             { path: '/popover', component: Popover },
             { path: '/tabs', component: Tabs },
             { path: '/toast', component: Toast },
+            { path: '/other', component: Other },
         ]
     },
 ]

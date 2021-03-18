@@ -183,6 +183,10 @@
         <div class="line" v-if="isShowFour"></div>
         <pre id="pre_action" v-if="isShowFour"><code class="code">{{contentFour}}</code></pre>
     </div>
+    <footer class="page-nav">
+            <p>上一节：<a href='#/layout'>layout组件</a></p>
+            <p>下一节：<a href='#/toast'>toast组件</a></p>
+    </footer>
 </div>
 </template>
 <script>

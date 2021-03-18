@@ -68,6 +68,10 @@
         <div class="line" v-if="isShowTwo"></div>
         <pre id="pre_action" v-if="isShowTwo"><code class="code">{{contentTwo}}</code></pre>
     </div>
+    <footer class="page-nav">
+            <p>上一节：<a href='#/toast'>toast组件</a></p>
+            <p>下一节：<a href='#/other'>other</a></p>
+    </footer>
 </div>
 </template>
 <script>

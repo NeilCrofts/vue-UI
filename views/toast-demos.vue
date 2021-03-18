@@ -39,6 +39,10 @@
         <div class="line" v-if="isShowThree"></div>
         <pre id="pre_action" v-if="isShowThree"><code class="code">{{contentThree}}</code></pre>
     </div>
+    <footer class="page-nav">
+            <p>上一节：<a href='#/grid'>grid组件</a></p>
+            <p>下一节：<a href='#/popover'>popover组件</a></p>
+    </footer>
 </div>
 </template>
 <script>

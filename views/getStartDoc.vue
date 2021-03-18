@@ -8,7 +8,7 @@
         <pre class='pre_action'><code class='code'>yarn add neil-vue-ui</code>
         </pre>
         
-        <footer>
+        <footer class='page-nav'>
             <p>上一节：<a href='#/introduce'>介绍</a></p>
             <p>下一节：<a href='#/use'>使用</a></p>
         </footer>
@@ -35,9 +35,13 @@ export default {
             font-size: 15px;
         }
     }
-    footer{
+    .page-nav{
         display: flex;
         justify-content: space-between;
         margin: 20px;
+        p>a{
+          color:#0AAACC;
+          text-decoration: none;
+        }
     }
 </style>

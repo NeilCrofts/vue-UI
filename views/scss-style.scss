@@ -45,3 +45,13 @@
         }
     }
 }
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    p>a {
+        color: #0AAACC;
+        text-decoration: none;
+    }
+}
