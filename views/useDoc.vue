@@ -3,7 +3,7 @@
     <h1>开始使用</h1>
     <p>请先<a href="#/getStart">安装</a>本组件库</p>
     <p>然后再你的代码中写入下面的代码</p>
-    <pre><code>import {Button,Tabs,input,grid,toast,popover} from 'neil-vue-ui'</code></pre>
+    <pre><code>import {Button,Tabs,Input,Grid,Toast,Popover} from 'neil-vue-ui'</code></pre>
     <h1>使用示例</h1>
     <pre>
 <code>import {Button} from 'Neil-vue-ui'

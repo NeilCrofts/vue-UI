@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router'
 
 import Introduce from '../views/introduceDoc.vue'
-import Doc from '../views/Doc.vue'
+import Doc from './App.vue'
 import GetStart from '../views/getStartDoc.vue'
 import Use from '../views/useDoc.vue'
 import Button from '../views/button-demos.vue'
