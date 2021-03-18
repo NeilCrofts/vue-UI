@@ -7,8 +7,8 @@
           </a>
         </div>
         <ul class="menu-right-link">
-            <li><a target="_blank" href="https://gitee.com/NeilCrofts/">码云</a></li>
-            <li><a target="_blank" href="https://github.com/NeilCrofts">github</a></li>
+            <li><a target="_blank" href="https://gitee.com/NeilCrofts/neil-vue-ui">码云</a></li>
+            <li><a target="_blank" href="https://github.com/NeilCrofts/vue-UI">github</a></li>
             <li>
                 <router-link to="/introduce">文档</router-link>
             </li>
