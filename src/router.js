@@ -7,6 +7,7 @@ import Use from '../views/useDoc.vue'
 import Button from '../views/button-demos.vue'
 import Grid from '../views/grid-demos.vue'
 import Input from '../views/input-demos.vue'
+import Collpase from '../views/collapse-demos.vue'
 import Tabs from '../views/tabs-demos.vue'
 import Layout from '../views/layout-demos.vue'
 import Toast from '../views/toast-demos.vue'
@@ -30,6 +31,7 @@ const routes = [
             { path: '/tabs', component: Tabs },
             { path: '/toast', component: Toast },
             { path: '/other', component: Other },
+            { path: '/collapse', component: Collpase }
         ]
     },
 ]

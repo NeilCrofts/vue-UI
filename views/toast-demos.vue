@@ -67,7 +67,7 @@ export default {
 
                  methods:{
                     onClickButton(position){
-                    this.$toast("你的智商余额为:"+parseInt(Math.random()*100)+",请充值", {
+                    this.$toast("你的话费余额为:"+parseInt(Math.random()*100)+",请充值", {
                     closeButton: {
                         text: '马上充值',
                         callback: () => {
@@ -100,7 +100,7 @@ export default {
         },
         methods:{
             onClickButton(position){
-                this.$toast(`你的花费余额为:${parseInt(Math.random()*100)},请充值`, {
+                this.$toast(`你的话费余额为:${parseInt(Math.random()*100)},请充值`, {
                 closeButton: {
                     text: '马上充值',
                     callback: () => {

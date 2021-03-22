@@ -27,6 +27,9 @@
             <router-link class="link-a" to="/input">input组件</router-link>
           </li>
           <li class="item-li">
+            <router-link class="link-a" to="/collapse">collapse组件</router-link>
+          </li>
+          <li class="item-li">
             <router-link class="link-a" to="/layout">layout组件</router-link>
           </li>
           <li class="item-li">
